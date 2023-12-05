@@ -58,15 +58,7 @@ public class C01_InputOutput {
 
         myScan.close();             // 입출력 메모리 해제
 
-
 */
-
-
-
-
-
-
-
 
 
     }
