@@ -31,7 +31,7 @@ public class C03_Operator {
 */
         //논리연산자
         // &&, ||, !
-
+/*
         int num1 = 10;
         int num2 = 20;
 
@@ -42,8 +42,66 @@ public class C03_Operator {
 
 
         // 비트연산자 &, |, ^,
+        int n1 = 5;                 //  0000101 (5)
+        int n2 = 6;                 //  0001101 (6)
+        System.out.println(n1 & n2);//  0000100 (4)
+        System.out.println(n1 | n2);//  0001101 (7)
+        System.out.println(n1 ^ n2);//  0001000 (3)
+        System.out.println( ~n1 );  //  (-6)
+        System.out.println(n1<<8);  //  곱하기 2^4
+        System.out.println(n1>>8);  //  곱하기 2^4*/
 
 
+
+        int a = 13;
+        int b = 9;
+
+        while(b!=0){
+            int same_index = a & b;
+            a = a ^ b ;
+            b = same_index << 1;
+        }
+        System.out.println(a);
+/*
+
+        a : 00100;
+        b : 10010;
+
+
+        a :
+
+*/
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
