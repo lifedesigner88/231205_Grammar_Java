@@ -66,19 +66,54 @@ public class C05_LoopStatements {
 
 */
 
-//
-//        for( int i = 1 ; i < 11 ; i++ ){
-//            if ( (i % 2) == 0 );
-//            else
-//                println("" + i);
-//        }
-//
+/*
+
+        for( int i = 1 ; i < 11 ; i++ ){
+            if ( (i % 2) == 0 );
+            else
+                println("" + i);
+        }
+
+*/
 
 
 
 //        자바 변수 유효 범위.
 
 //        지역변수, 전역변수
+
+
+
+
+/*
+
+    for(int i = 2 ; i < 10 ; i++ ) {
+        println("**** "+ i + "단 입니다.");
+        for (int j = 1; j < 10; j++) {
+            println(i + "X" + j + "=" + i * j);
+        }
+        println("");
+
+    }
+
+*/
+
+
+
+
+        int[][] arr = {{1, 2, 3, 4},{5, 6, 7,8,9}};
+        for (int i = 0 ; i<arr.length ; i++){
+            println("");
+            for(int j = 0 ; j<arr[i].length; j++ ){
+                println("" + arr[i][j]);
+            }
+        }
+
+
+
+
+
+
 
 
 
@@ -95,3 +130,26 @@ public class C05_LoopStatements {
         System.out.println(a);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
