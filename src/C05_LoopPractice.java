@@ -17,6 +17,7 @@ public class C05_LoopPractice {
 
         Scanner myScan = new Scanner(System.in);
 
+/*
         while(true) {
 
             int a = 0;
@@ -37,8 +38,17 @@ public class C05_LoopPractice {
             println("" + result);
 
         }
+*/
 
-
+/*
+        int sum1 = 0;
+        int[] arr = {1,2,3,4,1,2,3,4};
+        for (int a : arr) {
+            if( a%2 == 0 ){
+                sum1 += a;
+            }
+        }
+*/
 
 
 /*
@@ -63,7 +73,7 @@ public class C05_LoopPractice {
 
 
 
-/*
+/* 최소공배수.
 
 
         int a = 72;
@@ -82,7 +92,7 @@ public class C05_LoopPractice {
                 result = i;
         } println("" + result);
 
-
+    int minNum = a/result * b /result * result
 */
 /*
 
@@ -113,12 +123,71 @@ public class C05_LoopPractice {
 
 */
 
+// 레벨문 활용
+
+
+
+/*
+        while (true){
+            int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7}, {8, 9, 10}, {11, 12, 13, 14, 15, 16}};
+
+            println("찾을 숫자를 입력하세요. 16개가 있습니다.");
+            int for_find = myScan.nextInt();
+            loop1:
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] == for_find) {
+                        println("찾는 숫자의 주소는" + "matrix[" + i + "][" + j + "]");
+                        break loop1;
+                    }
+                }
+            }
+        }
+*/
+
+
+
+
+        int minNum = 1;
+        int maxNum = 20 ;
+        int divisorCounter = 1 ;
+
+        loop:
+        for (int i = minNum ; i <= maxNum ; i++){
+            divisorCounter = 1;
+
+            for (int  j = 2 ; j <= i ; j++)
+               if( i % j == 0 )
+                   divisorCounter++;
+
+            if(divisorCounter >= 5) {
+
+                println("");
+                println("범위가 " + minNum + "에서 " + maxNum + "까지의 숫자중에서");
+                println(i + "는 약수가 " + divisorCounter + "개 이기 떄문에");
+                println("주어진 범위내에서 약수가 5개 이상인 첫 번째 숫자입니다.");
+
+                break loop;
+            }
+        }
 
 
 
 
 
 
+
+
+
+/*
+        int[][] arr = {{1, 2, 3, 4},{5, 6, 7,8,9}};
+        for (int i = 0 ; i<arr.length ; i++){
+            println("");
+            for(int j = 0 ; j<arr[i].length; j++ ){
+                println("" + arr[i][j]);
+            }
+        }
+*/
 
 
 
@@ -130,3 +199,23 @@ public class C05_LoopPractice {
         System.out.println(a);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

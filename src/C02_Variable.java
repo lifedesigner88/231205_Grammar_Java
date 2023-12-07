@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 public class C02_Variable {
     public static void main(String[] arg){
 
-/*        byte num1 = 127;
+/*      byte num1 = 127;
         byte num2 = -128;
         num1++;
         num2--;
@@ -29,6 +29,11 @@ public class C02_Variable {
 */
 
 
+        int[] arr = new int[5];
+        println("" + arr[0]);
+
+
+/*
         BigDecimal myBig1 = new BigDecimal("1.03");
         BigDecimal myBig2 = new BigDecimal("0.0042");
 
@@ -85,7 +90,12 @@ public class C02_Variable {
 
         final int AGES = 20;
 
+*/
 
 
+    }
+
+    private static void println(String a) {
+        System.out.println(a);
     }
 }
