@@ -266,8 +266,8 @@ class Solution {
 
 // StringBuffer 는 문자열을 추가하거나 변경할 때 주로 사용하는 객체
 
-
         StringBuffer sb = new StringBuffer("hello");
+
 
         sb.append(" world");
         print("append result : " + sb.toString());
@@ -279,17 +279,67 @@ class Solution {
         sb.delete(6, 11);
         print(sb.toString());
 
+// 성능 String < StringBuffer < StringBuilder (스레드 safe X)
 
-// SrtingBuffer
+        StringBuilder sb2 = new StringBuilder("hello");
+        sb2.append(2);
 
-
-
-
-
-
+        String str = new String("dsf");
 
 
 
+// 문자열 밀기 풀이.
+/*
+
+    class Solution {
+        public int solution(String A, String B) {
+            int answer = 0;
+            int length = A.length();
+            StringBuilder temp = new StringBuilder(A);
+
+
+            for (int i = 0 ; i < length ; i++){
+                if (B.equals(temp.toString()))
+                    break;
+                temp.insert(0,temp.charAt(length-1));
+                temp.delete(length, length+1);
+                answer++;
+            }
+
+            if (!B.equals(temp.toString()))
+                answer = -1;
+
+
+            return answer;
+
+            // return (B + B).indexOf(A);
+        }
+    }
+*/
+/*
+
+        class Solution {
+            public int solution(String A, String B) {
+                int answer = -1;
+                int length = A.length();
+                StringBuilder temp = new StringBuilder(A);
+
+
+                for (int i = 0 ; i < length ; i++){
+                    if (B.equals(temp.toString())){
+                        answer = i;
+                        break;
+                    }
+                    temp.insert(0,temp.charAt(length-1));
+                    temp.delete(length, length+1);
+
+                }
+
+                return answer;
+                // return (B + B).indexOf(A);
+            }
+        }
+*/
 
 
 
