@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
+
 
 public class C06_String {
     public static void main(String[] args){
@@ -210,6 +208,7 @@ public class C06_String {
 //        isEmpty 와 Null 구분
  */
 
+/*
 
 
         String st1 = null;
@@ -224,11 +223,7 @@ public class C06_String {
         arr[1] = "world";
         print(arr[3]);
 
-
-
-
-
-
+*/
 
 
 
@@ -256,11 +251,53 @@ class Solution {
 */
 
 
+// join : String[] -> String 합치기
+
+        String[] arr = {"html", "java", "java-script", "python"};
+        print(String.join(" ",arr));
+
+// String 과 int의 형변환
+
+        int a = 10;
+        String st_a = Integer.toString(a);
+        String st_a1 = String.valueOf(a);
+
+
+
+// StringBuffer 는 문자열을 추가하거나 변경할 때 주로 사용하는 객체
+
+
+        StringBuffer sb = new StringBuffer("hello");
+
+        sb.append(" world");
+        print("append result : " + sb.toString());
+        sb.insert(sb.indexOf(" ")," java");
+        enter();
+
+        print("substring : " + sb.substring(6, 10));
+        print("substring result : " + sb.toString());
+        sb.delete(6, 11);
+        print(sb.toString());
+
+
+// SrtingBuffer
+
+
+
+
+
+
+
+
 
 
 
 
     } // main
+
+    private static void enter() {
+        print("");
+    }
 
     // Print funtion
     private static void print(List<Integer> A) {
