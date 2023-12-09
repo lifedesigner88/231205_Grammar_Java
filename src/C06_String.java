@@ -289,7 +289,6 @@ class Solution {
 
 
 // 문자열 밀기 풀이.
-/*   /*      for upload ********************
 
     class Solution {
         public int solution(String A, String B) {
@@ -309,14 +308,11 @@ class Solution {
             if (!B.equals(temp.toString()))
                 answer = -1;
 
-
             return answer;
 
-            // return (B + B).indexOf(A);
         }
     }
-*/
-/*
+
 
         class Solution {
             public int solution(String A, String B) {
@@ -332,15 +328,12 @@ class Solution {
                     }
                     temp.insert(0,temp.charAt(length-1));
                     temp.delete(length, length+1);
-
                 }
 
                 return answer;
-                // return (B + B).indexOf(A);
             }
         }
-*/
-
+*/args
 
 
     } // main
