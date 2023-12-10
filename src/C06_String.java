@@ -60,7 +60,9 @@ public class C06_String {
 
 
 //      String method 들 입니다.
+
 /*
+
 //        length()
         String mySt = " hello ";
         print("length() : " + mySt.length());
@@ -98,12 +100,14 @@ public class C06_String {
         print(s1.substring(0, 5));
         print(s1.substring(6,s1.length()));
 
+
 //        trim, strip
         String trimSt = "       hello world  ";
         print(trimSt.trim());
         print(trimSt);
         print(trimSt.strip());
         print(trimSt);
+
 
 
 //        toUpperCase / toLowerCase
@@ -114,11 +118,13 @@ public class C06_String {
         print(a1 + " " + a2);
 
 
+
 //        문자열 더하기
 
         String s4 = "Hello";
         s4 += " world";
         print(s4);
+
 
 
 //      Char -> String 형변환
@@ -144,6 +150,10 @@ public class C06_String {
 
 */
 
+//        my_string.toCharArray(); => char 배열로 변경
+//        String[] arr = my_string.split("");
+//        아무것도 없으면 스트링 배열로 변경.
+//        StringBuilder .. sb.setCharAt(index, char)
 
 // 정규표현식
 /*
@@ -289,58 +299,50 @@ class Solution {
 
 
 // 문자열 밀기 풀이.
-/*   /*      for upload ********************
-
-    class Solution {
-        public int solution(String A, String B) {
-            int answer = 0;
-            int length = A.length();
-            StringBuilder temp = new StringBuilder(A);
-
-
-            for (int i = 0 ; i < length ; i++){
-                if (B.equals(temp.toString()))
-                    break;
-                temp.insert(0,temp.charAt(length-1));
-                temp.delete(length, length+1);
-                answer++;
-            }
-
-            if (!B.equals(temp.toString()))
-                answer = -1;
-
-
-            return answer;
-
-            // return (B + B).indexOf(A);
-        }
-    }
-*/
-/*
-
-        class Solution {
-            public int solution(String A, String B) {
-                int answer = -1;
-                int length = A.length();
-                StringBuilder temp = new StringBuilder(A);
-
-
-                for (int i = 0 ; i < length ; i++){
-                    if (B.equals(temp.toString())){
-                        answer = i;
-                        break;
-                    }
-                    temp.insert(0,temp.charAt(length-1));
-                    temp.delete(length, length+1);
-
-                }
-
-                return answer;
-                // return (B + B).indexOf(A);
-            }
-        }
-*/
-
+//
+//    class Solution {
+//        public int solution(String A, String B) {
+//            int answer = 0;
+//            int length = A.length();
+//            StringBuilder temp = new StringBuilder(A);
+//
+//
+//            for (int i = 0 ; i < length ; i++){
+//                if (B.equals(temp.toString()))
+//                    break;
+//                temp.insert(0,temp.charAt(length-1));
+//                temp.delete(length, length+1);
+//                answer++;
+//            }
+//
+//            if (!B.equals(temp.toString()))
+//                answer = -1;
+//
+//            return answer;
+//
+//        }
+//    }
+//
+//
+//        class Solution {
+//            public int solution(String A, String B) {
+//                int answer = -1;
+//                int length = A.length();
+//                StringBuilder temp = new StringBuilder(A);
+//
+//
+//                for (int i = 0 ; i < length ; i++){
+//                    if (B.equals(temp.toString())){
+//                        answer = i;
+//                        break;
+//                    }
+//                    temp.insert(0,temp.charAt(length-1));
+//                    temp.delete(length, length+1);
+//                }
+//
+//                return answer;
+//            }
+//        }
 
 
     } // main
