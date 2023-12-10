@@ -99,9 +99,7 @@ public class C07_Array {
                 .sorted(Comparator.reverseOrder())              // 내림차순 정렬
                 .mapToInt( a -> a )                             // Interger 를 인트로 변환 ( 람다 )
                 .toArray();                                     // 배열로 변환
-
         print(Arrays.toString(new_arr2));
-
 
 
 
