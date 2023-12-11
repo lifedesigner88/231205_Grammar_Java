@@ -274,7 +274,10 @@ public class C07_Array {
 //            }
 //        }
 
-//
+
+
+
+
 ////      버블정렬
 //        int[] arr = {9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,1,2,3,4,1,2,3,4,1,2,3,4};
 //        System.out.println(Arrays.toString(arr));
@@ -305,6 +308,94 @@ public class C07_Array {
 //        print(arr.length);
 //        print(arr.length*arr.length);
 //
+
+
+
+
+
+////        배열의 검색
+//
+//        int [] arr = {5,3,1,8,7};
+//        int answer = 0;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//
+//
+//        }
+//
+//        이진검색(Binary Search)
+//        사전에 오름차순 정렬이 되어 있어야 이진 검색 가능.
+//
+//
+//        int [] arr = {9,1,1,2,3,4,5,8,8,8};
+//        int answer = Arrays.binarySearch(arr,8);
+//        System.out.println(answer);
+//        int index = Arrays.stream(arr)
+//                .filter( a-> a == 4 )
+//                .findFirst()
+//                .getAsInt();
+//        print(index);
+//
+//
+//
+//
+////        배열간 비교 : equals;
+//        int[] arr1 = {10,20,30};
+//        int[] arr2 = {20,30,10};
+//
+//        print(Arrays.equals(arr1,arr2));
+//
+
+
+//        배열복사 : copyOf(배열,endindex) // 처음부터 끝까지 넘어가면 종료
+//        Arrays.copyOfRange(배열, startIndex, endIndex);
+
+
+//
+//// 2차원 배열 할당.
+//
+//        int[][] arr = new int[2][3];
+//
+//
+//        arr[0][0] = 1;
+//        arr[0][1] = 2;
+//        arr[0][2] = 3;
+//
+//        arr[1][0] = 4;
+//        arr[1][1] = 5;
+//        arr[1][2] = 6;
+//
+////        배열의 심화
+//        int[][] arr1 = new int[3][];
+//        arr1[0] = new int[]{1,2,3,4,5};
+//        arr1[1] = new int[2];
+//        arr1[2] = new int[3];
+//
+//
+////      리터럴 변수.
+//        int[][] arr3 = {{10,12,13},{12,1},{2,3,4,5}};
+//
+//        int[][] arr4 = new int[3][4] ;
+//        int count = 1;
+//
+//        for (int i = 0; i < arr4.length; i++)
+//            for (int j = 0; j < arr4[0].length; j++)
+//                arr4[i][j] = count++;
+//        print(Arrays.deepToString(arr4));
+//
+//
+////      가변배열 만들기
+//
+//        int[][] arr5 = new int[5][];
+//
+//        for (int i = 0; i < arr5.length; i++) {
+//            arr5[i] = new int[i + 1];
+//            for (int j = 0; j <= i; j++)
+//                arr5[i][j] = i+1;
+//        }
+//
+//
+//        print(Arrays.deepToString(arr5));
 
 
 
