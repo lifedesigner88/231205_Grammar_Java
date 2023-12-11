@@ -202,7 +202,9 @@ public class C07_Array {
         print(Arrays.toString(arr));
 
 */
-
+//
+//        (n-1) + (n-2) + (n-3) + .. + (n - (n-1)) = n^2 + -3n + 2
+//        6c2 = 6*5 / 2*1
 
 
 //      선택정렬 알고리즘
@@ -220,7 +222,57 @@ public class C07_Array {
         print(Arrays.toString(arr));
 
 
+//        2개의 합의 조합.
 
+/*
+
+
+        int count = 0;
+        int[] arr = {10, 20, 30, 40, 50, 60};
+
+        for (int i = 0; i < arr.length - 1; i++)
+            for (int j = i + 1; j < arr.length; j++) {
+                print(arr[i] + "," + arr[j] + "  count : " + ++count);
+                print("sum = " + (arr[i] + arr[j]));
+            }
+
+*/
+
+
+//
+//// 두개 뽑아서 더하기.
+//        import java.util.Arrays;
+//
+//        class Solution {
+//            public int[] solution(int[] numbers) {
+//
+//                int count = 0;
+//                for (int i = 0; i < numbers.length -1; i++)
+//                    for (int j = i + 1; j < numbers.length; j++)
+//                        count++;
+//
+//                int[] preAnswer = new int[count];
+//
+//                count = 0;
+//                for (int i = 0; i < numbers.length - 1; i++)
+//                    for (int j = i + 1; j < numbers.length; j++)
+//                        preAnswer[count++] = numbers[i] + numbers[j];
+//
+//                Arrays.sort(preAnswer);
+//
+//                int[] temp = new int[preAnswer.length];
+//
+//                count = 0;
+//                for (int i = 0; i < preAnswer.length - 1; i++)
+//                    if (preAnswer[i] != preAnswer[i+1])
+//                        temp[count++] = preAnswer[i];
+//
+//                temp[count++] = preAnswer[preAnswer.length -1];
+//                int[] Answer = Arrays.copyOfRange(temp, 0, count);
+//
+//                return Answer;
+//            }
+//        }
 
 
 
