@@ -347,7 +347,7 @@ public class C07_Array {
 //
 
 
-//        배열복사 : copyOf(배열,endindex) // 처음부터 끝까지 넘어가면 종료
+//        배열복사 : copyOf(배열,endindex) // 처음부터 끝까지, 넘어가면 종료
 //        Arrays.copyOfRange(배열, startIndex, endIndex);
 
 
