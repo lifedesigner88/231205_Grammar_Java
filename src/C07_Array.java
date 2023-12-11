@@ -92,17 +92,17 @@ public class C07_Array {
 
 //        StreamApi, lamda를 활용한 내림 차순 정렬.
 
-
-        int[] arr2 = {9, 4, 12, 3, 6, 56, 3, 2, 4, 5, 67, 2, 3, 4, 0};
-
-        int[] new_arr2 = Arrays.stream(arr2)                    // arr2 대상으로 Stream 객체 생성
-                .boxed()                                        // Interger 형 변환한 스트림 객체 생성
-                .sorted(Comparator.reverseOrder())              // 내림차순 정렬
-                .mapToInt( a -> a )                             // Interger 를 인트로 변환 ( 람다 )
-                .toArray();                                     // 배열로 변환
-
-        print(Arrays.toString(new_arr2));
-
+//
+//        int[] arr2 = {9, 4, 12, 3, 6, 56, 3, 2, 4, 5, 67, 2, 3, 4, 0};
+//
+//        int[] new_arr2 = Arrays.stream(arr2)                    // arr2 대상으로 Stream 객체 생성
+//                .boxed()                                        // Interger 형 변환한 스트림 객체 생성
+//                .sorted(Comparator.reverseOrder())              // 내림차순 정렬
+//                .mapToInt( a -> a )                             // Interger 를 인트로 변환 ( 람다 )
+//                .toArray();                                     // 배열로 변환
+//
+//        print(Arrays.toString(new_arr2));
+//
 
 
 
@@ -351,6 +351,13 @@ public class C07_Array {
 //        Arrays.copyOfRange(배열, startIndex, endIndex);
 
 
+
+
+
+
+
+//        2023.11.12 7th;
+
 //
 //// 2차원 배열 할당.
 //
@@ -396,10 +403,6 @@ public class C07_Array {
 //
 //
 //        print(Arrays.deepToString(arr5));
-
-
-
-
 
 
 
