@@ -274,6 +274,43 @@ public class C07_Array {
 //            }
 //        }
 
+//
+////      버블정렬
+//        int[] arr = {9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,1,2,3,4,1,2,3,4,1,2,3,4};
+//        System.out.println(Arrays.toString(arr));
+//        int temp= 0;
+//        int length = arr.length -1;
+//        int count1 = 0;
+//        int count2 = 0;
+//        int count3 = 0;
+//
+//        for (int i = 0; i < length ; i++) {
+//            boolean bool1 = false;
+//            for (int j = 0; j < length - i; j++) {
+//                if (arr[j] > arr[j + 1]) {
+//                    temp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = temp;
+//                    bool1 = true;
+//                }
+//                count2++;
+//            }
+//            if (bool1 = false)
+//                break;
+//            count3++;
+//        }
+//
+//        System.out.println(Arrays.toString(arr));
+//        print(count1 + count2 + count3);
+//        print(arr.length);
+//        print(arr.length*arr.length);
+//
+
+
+
+
+
+
 
 
 
@@ -293,6 +330,36 @@ public class C07_Array {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
