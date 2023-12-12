@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class C08_List {
@@ -39,6 +40,7 @@ public class C08_List {
 //      set(int index, E elemet)
 //      contains (element)
 
+        Collection
 
 
     } // main

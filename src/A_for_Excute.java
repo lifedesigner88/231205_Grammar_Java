@@ -76,13 +76,44 @@ myList2.clear();
 
 
 
-// 리스트 출력
+// 배열이 들어간 리스트.
+List<int[]> myList4 = new ArrayList<>();
+myList4.add(new int[]{1,2,3});
+myList4.add(new int[2]);
+
+myList4.get(1)[0] = 10;
+myList4.get(1)[1] = 20;
+
+System.out.println(Arrays.deepToString(myList4.toArray()));
+
+for (int[] I : myList4)
+    print(Arrays.toString(I));
 
 
 
+// 리스트가 들어간 리스트.
+List<List<Integer>> myList5 = new ArrayList<>();
+myList5.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
+myList5.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
+
+for (List<Integer> integers : myList5) integers.add(10);
+
+
+System.out.println("mylist5 : " + myList5);
 
 
 
+// 리스트가 들어간 리스트.
+List<List<Integer>> myList6 = new ArrayList<>();
+myList6.add(new ArrayList<>());
+myList6.add(new ArrayList<>());
+myList6.add(new ArrayList<>());
+
+for (int i = 0; i < myList6.size(); i++)
+    for (int j = 0; j < 3; j++)
+        myList6.get(i).add((j+1)*(int)Math.pow(10,i));
+
+System.out.println("myList6 : " + myList6);
 
 
 
