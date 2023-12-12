@@ -1,12 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class A_for_Excute {
     public static void main(String[] args) {
         print("");
 
-
+// 2023.12.12
 
 // 끼워넣기
 List<Integer> myList = new ArrayList<>();
@@ -91,6 +90,7 @@ for (int[] I : myList4)
 
 
 
+
 // 리스트가 들어간 리스트.
 List<List<Integer>> myList5 = new ArrayList<>();
 myList5.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
@@ -100,6 +100,8 @@ for (List<Integer> integers : myList5) integers.add(10);
 
 
 System.out.println("mylist5 : " + myList5);
+
+
 
 
 
@@ -114,6 +116,63 @@ for (int i = 0; i < myList6.size(); i++)
         myList6.get(i).add((j+1)*(int)Math.pow(10,i));
 
 System.out.println("myList6 : " + myList6);
+
+
+
+print("");
+print("4교시");
+
+// 정렬
+List<Integer> myList7 = new ArrayList<>(Arrays.asList(5,3,2,1,5));
+
+Collections.sort(myList7); myList7.add(4);
+Collections.sort(myList, Comparator.reverseOrder());
+myList7.sort(Comparator.naturalOrder());
+myList7.sort(Comparator.reverseOrder());
+
+
+
+
+// String 배열 => list 로 변환.
+String[] str = {"1","2","3","4","5","6","7","8","9"};
+int[] intArr = {1,2,3,4,5,6,7};
+
+// 1-1
+List<String> stList = new ArrayList<>(Arrays.asList(str));
+// 1-2
+        for (String S : str) stList.add(S);
+        Collections.addAll(stList, str);
+
+// 1-3
+List<String> stList3 = Arrays.stream(str)
+        .collect(Collectors.toList());
+
+List<Integer> intList = Arrays.stream(intArr)
+        .boxed()
+        .collect(Collectors.toList());
+
+print("String Linked -> : " + stList.toString());
+String[] stArr1 = stList.toString().split(", ");
+
+print("String Linked -> : " + Arrays.toString(stArr1));
+
+        String[] stArr2 = stList.stream().toArray(a -> new String[a]);
+
+
+int[] comStr = {1,2,3,4,5,6,7,8,9,0};
+
+List<Integer> combination = new ArrayList<>();
+
+        for (int i = 0; i < comStr.length; i++)
+            for (int j = i + 1; j < comStr.length; j++) {
+                combination.add(comStr[i] + comStr[j]);
+            }
+
+
+
+
+
+
 
 
 

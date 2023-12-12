@@ -40,7 +40,6 @@ public class C08_List {
 //      set(int index, E elemet)
 //      contains (element)
 
-        Collection
 
 
     } // main
