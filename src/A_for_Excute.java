@@ -154,24 +154,72 @@ List<Integer> intList = Arrays.stream(intArr)
 print("String Linked -> : " + stList.toString());
 String[] stArr1 = stList.toString().split(", ");
 
-print("String Linked -> : " + Arrays.toString(stArr1));
+        print("String Linked -> : " + Arrays.toString(stArr1));
 
         String[] stArr2 = stList.stream().toArray(a -> new String[a]);
 
 
-int[] comStr = {1,2,3,4,5,6,7,8,9,0};
 
-List<Integer> combination = new ArrayList<>();
+//        // 2개를 더한 조합의 수 구하기. (*upload)
+//        int[] comStr = {1,2,3,4,5,6,7,8,9,0};
+//
+//        List<Integer> comBi = new ArrayList<>();
+//        for (int i = 0; i < comStr.length-1; i++)
+//            for (int j = i + 1; j < comStr.length; j++)
+//                comBi.add(comStr[i] + comStr[j]);
+//
+//            comBi.sort(Comparator.naturalOrder());
+//
+//        List<Integer> result = new ArrayList<>();
+//        for (int i = 0; i < comBi.size() - 1; i++)
+//            if (!comBi.get(i).equals(comBi.get(i+1)))
+//                result.add(comBi.get(i));
+//
+//            result.add(comBi.get(comBi.size()-1));
+//
+//        print("Result : " + result);
 
-        for (int i = 0; i < comStr.length; i++)
-            for (int j = i + 1; j < comStr.length; j++) {
-                combination.add(comStr[i] + comStr[j]);
-            }
+
+        // 2개를 더한 조합의 수 구하기. (*upload)
+        int[] comStr = {1,2,3,4,5,6,7,8,9,0};
+
+        List<Integer> comBi = new ArrayList<>();
+        for (int i = 0; i < comStr.length-1; i++)
+            for (int j = i + 1; j < comStr.length; j++)
+                if(!comBi.contains(comStr[i] + comStr[j]))
+                    comBi.add(comStr[i] + comStr[j]);
+
+        comBi.sort(Comparator.naturalOrder());
+
+        int[] answer = new int[comBi.size()];
+        int counter = 0;
+        for (Integer i : comBi) answer[counter++] = i;
+
+        print("Result : " + comBi);
 
 
 
+        // 약수 구하기
+        int n = 12;
+        List<Integer> multi = new ArrayList<>();
+
+        counter = 1;
+        do
+            if (n % counter == 0)
+                multi.add(counter);
+        while(counter++ < n);
+
+        print("n의 약수 : " + multi);
 
 
+
+        // 배수 구하기
+        n=3;
+        counter = 1;
+        multi.clear();
+
+        for (Integer i: comBi)
+            if(i % n == 0);
 
 
 
