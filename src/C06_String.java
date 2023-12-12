@@ -283,7 +283,6 @@ class Solution {
         print("append result : " + sb.toString());
         sb.insert(sb.indexOf(" ")," java");
         enter();
-
         print("substring : " + sb.substring(6, 10));
         print("substring result : " + sb.toString());
         sb.delete(6, 11);
