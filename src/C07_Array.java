@@ -240,8 +240,8 @@ public class C07_Array {
 
 */
 
-
-
+//
+//
 //// 두개 뽑아서 더하기.
 //        import java.util.Arrays;
 //
@@ -275,8 +275,8 @@ public class C07_Array {
 //                return Answer;
 //            }
 //        }
-
-
+//
+//
 
 
 

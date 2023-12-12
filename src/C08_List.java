@@ -194,6 +194,7 @@ public class C08_List {
         print("String Linked -> : " + Arrays.toString(stArr1));
 
         String[] stArr2 = stList.stream().toArray(a -> new String[a]);
+        String[] stArr = stList.toArray(String[]::new);
 
 
 
@@ -205,14 +206,14 @@ public class C08_List {
             for (int j = i + 1; j < comStr.length; j++)
                 comBi.add(comStr[i] + comStr[j]);
 
-            comBi.sort(Comparator.naturalOrder());
+        comBi.sort(Comparator.naturalOrder());
 
         List<Integer> result = new ArrayList<>();
         for (int i = 0; i < comBi.size() - 1; i++)
             if (!comBi.get(i).equals(comBi.get(i+1)))
                 result.add(comBi.get(i));
 
-            result.add(comBi.get(comBi.size()-1));
+        result.add(comBi.get(comBi.size() - 1));
 
         print("Result : " + result);
 

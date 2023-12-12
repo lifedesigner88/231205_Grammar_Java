@@ -80,26 +80,26 @@ public class C09_Map {
 /*      // upload
 import java.util.*;
 
-        class Solution {
-            public String solution(String[] participant, String[] completion) {
-                String answer = "";
+class Solution {
+    public String solution(String[] participant, String[] completion) {
 
-                Map<String, Integer> members = new HashMap<>();
+        String answer = "";
+        Map<String, Integer> members = new HashMap<>();
 
-                for (String p : participant)
-                    members.put(p , members.getOrDefault(p, 0) + 1 ) ;
+        for (String p : participant)
+            members.put(p , members.getOrDefault(p, 0) + 1 ) ;
 
-                for (String c : completion)
-                    if (members.containsKey(c))
-                        members.put(c, members.get(c) - 1);
+        for (String c : completion)
+            if (members.containsKey(c))
+                members.put(c, members.get(c) - 1);
 
-                for (String a : members.keySet())
-                    if (members.get(a) == 1)
-                        answer = a;
+        for (String a : members.keySet())
+            if (members.get(a) == 1)
+                answer = a;
 
-                return answer;
-            }
-        }
+        return answer;
+    }
+}
         */
 
 
