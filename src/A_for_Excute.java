@@ -6,113 +6,55 @@ public class A_for_Excute {
         print("");
 
 
-// 중복제거용.
+    Stack<String> myStr = new Stack<>();
+    for (int i = 1; i<=6; i++)
+        myStr.push("hello " + i);
 
-    Set<String> mySet = new HashSet<>();
-        mySet.add("h");
-        mySet.add("h");
-        mySet.add("e");
-        mySet.add("l");
-        mySet.add("l");
-        mySet.add("o");
-        System.out.println(mySet);
+//    Pop은 요소 제거 후 반환
+    print("Stack : " + myStr.pop()); // 40
+
+    print("pop result : " + myStr);
+    print("Peek : " + myStr.peek()); // 40
+    print("Stack Size : " + myStr.size());
+    print("Stack isEmpty : " + myStr.isEmpty());
+    print("");
 
 
 
+    while(!myStr.isEmpty())
+        print("while, isEmpty 활용하여 모두 팝 : " + myStr.pop());
 
-    List<String> myList = new ArrayList<>();
-        myList.add("basketball");
-        myList.add("basketball");
-        myList.add("basketball");
-        myList.add("kbaseball");
-        myList.add("kbaseball");
-        myList.add("kbaseball");
-        myList.add("kbaseball");
-        myList.add("tennis");
-        myList.add("tennis");
-        myList.add("tennis");
-        myList.add("tennis");
-        myList.add("kbaseball");
-        myList.add("kbaseball");
-        myList.add("tennis");
+
+//    앞으로 가기 뒤로 가기
+
+    Scanner myScan = new Scanner(System.in);
+
+    while(true) {
+
         print("");
+        print("(뒤로가기: 1) (히스토리: 2)");
+        print("방문할 사이트를 입력해주세요 ");
+        String inputs = myScan.nextLine();
+
+        Stack<String> StackForWeb = new Stack<>();
+
+        if (inputs.equals("1"))
+
+            if (StackForWeb.isEmpty())
+                print("이전 페이지가 없습니다. 다시 입력해주세요");
+            else
+                print(StackForWeb.peek() + "페이지로 이동하였습니다.");
+
+        else if (inputs.equals("2"))
+            print("현재 방문 기록" + StackForWeb);
+
+        else {
+            StackForWeb.push(inputs);
+            print(inputs + "페이지로 이동하였습니다.");
+        }
 
 
-
-        //    Set<String> mySet1 = new HashSet<>();
-        //    for (String a : myList) mySet1.add(a);
-        //    mySet1.addAll(myList);
-
-        // List를 인자값으로 받아 초기값 세팅 가능
-        // 배열인 경우에는 asList(배열);
-
-        Set<String> mySet1 = new HashSet<>(myList);
-        print( "종목의 가지수는 " + mySet1.size() + "가지 입니다.");
-
-
-        String[] myArr = {"java", "python", "C++", "python", "C++"};
-        Set<String> mySet2 = new HashSet<>(Arrays.asList(myArr));
-        print( "언어의 가지수는 " + mySet2.size() + "가지 입니다.");
-
-        mySet2.remove("java");
-        print("mySet2 : " + mySet2);
-
-
-        int[] myArrInt = {1,2,3,4,5,6,7};
-        Set<Integer> mySetInt = new HashSet<>();
-        for(int a : myArrInt) mySetInt.add(a);
-        print("mySetInt : " + mySetInt );
-
-
-
-//        집합의 연산.
-
-        Set<String> myStr1 = new HashSet<>(Arrays.asList("java", "python", "javaScript"));
-        Set<String> myStr2 = new HashSet<>(Arrays.asList("java", "python"));
-
-
-//       교집합 : retainAll;
-        Set<String> temp1 = new HashSet<>(myStr1);
-        temp1.retainAll(myStr2);
-        print("교집합 : " + temp1);
-
-
-//       합집합 : addAll;
-        Set<String> temp2 = new HashSet<>(myStr1);
-        temp2.addAll(myStr2);
-        print("합집합 : " + temp2);
-
-
-//       차집합 : removeAll;
-        Set<String> temp3 = new HashSet<>(myStr1);
-        temp3.removeAll(myStr2);
-        print("차집합 : " + temp3);
-
-
-//      LinkedHashSet. TreeSet
-        Set<String> mySet3 = new TreeSet<>();
-        mySet.add("1");
-        mySet.add("2");
-        mySet.add("3");
-        mySet.add("4");
-        mySet.add("5");
-        mySet.add("6");
-
-
-
-        Set<String> mySet4 = new TreeSet<>();
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 
