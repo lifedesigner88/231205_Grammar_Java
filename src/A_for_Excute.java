@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.stream.Collectors;
 
 public class A_for_Excute {
@@ -6,62 +7,55 @@ public class A_for_Excute {
         print("");
 
 
-    Stack<String> myStr = new Stack<>();
-    for (int i = 1; i<=6; i++)
-        myStr.push("hello " + i);
-
-//    Pop은 요소 제거 후 반환
-    print("Stack : " + myStr.pop()); // 40
-
-    print("pop result : " + myStr);
-    print("Peek : " + myStr.peek()); // 40
-    print("Stack Size : " + myStr.size());
-    print("Stack isEmpty : " + myStr.isEmpty());
-    print("");
 
 
+//
+        Queue<Integer> myQue = new LinkedList<>();
+        myQue.add(10);
+        myQue.add(20);
+        myQue.add(30);
+        myQue.add(40);
+        print(myQue.poll());
+        print("큐 출력 : " + myQue);
 
-    while(!myStr.isEmpty())
-        print("while, isEmpty 활용하여 모두 팝 : " + myStr.pop());
+        Queue<String> docPrinter= new LinkedList<>();
+
+        docPrinter.add("문서1");
+        docPrinter.add("문서2");
+        docPrinter.add("문서3");
+        docPrinter.add("문서4");
+
+        while(!docPrinter.isEmpty())
+            print("현재 인쇄 중인 문서 " + docPrinter.poll());
 
 
-//    앞으로 가기 뒤로 가기
+//      길이의 제한이 있는 큐 : ArrayBlockingQueue
+    Queue<String> myQue1 = new ArrayBlockingQueue<>(3);
+        myQue1.offer("hellow1");
+        myQue1.offer("hellow2");
+        print(myQue1.offer("hellow3"));         //true
+        print("" + myQue1.offer("hellow4"));    //false
 
-    Scanner myScan = new Scanner(System.in);
 
-    while(true) {
+//       우선순위 큐 (PriorityQueue)
 
-        print("");
-        print("(뒤로가기: 1) (히스토리: 2)");
-        print("방문할 사이트를 입력해주세요 ");
-        String inputs = myScan.nextLine();
+        Queue<Integer> pq = new PriorityQueue();
+        pq.add(1);
+        pq.add(2);
+        pq.add(7);
+        pq.add(6);
+        pq.add(5);
+        pq.add(4);
+        pq.add(4);
+        pq.add(4);
 
-        Stack<String> StackForWeb = new Stack<>();
+        print("우선순위큐 : " + pq);
 
-        if (inputs.equals("1"))
+        while(!pq.isEmpty()) {
+            print(pq.poll());
+            print("우선순위큐 : " + pq);
 
-            if (StackForWeb.isEmpty())
-                print("이전 페이지가 없습니다. 다시 입력해주세요");
-            else
-                print(StackForWeb.peek() + "페이지로 이동하였습니다.");
-
-        else if (inputs.equals("2"))
-            print("현재 방문 기록" + StackForWeb);
-
-        else {
-            StackForWeb.push(inputs);
-            print(inputs + "페이지로 이동하였습니다.");
         }
-
-
-    }
-
-
-
-
-
-
-
 
 
 
