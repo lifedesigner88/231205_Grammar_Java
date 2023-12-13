@@ -63,17 +63,44 @@ public class A_for_Excute {
         for(int a : myArrInt) mySetInt.add(a);
         print("mySetInt : " + mySetInt );
 
+
+
+//        집합의 연산.
+
+        Set<String> myStr1 = new HashSet<>(Arrays.asList("java", "python", "javaScript"));
+        Set<String> myStr2 = new HashSet<>(Arrays.asList("java", "python"));
+
+
 //       교집합 : retainAll;
-        Set<String> temp1 = new HashSet<>(mySet1);
-        temp1.retainAll(mySet2);
+        Set<String> temp1 = new HashSet<>(myStr1);
+        temp1.retainAll(myStr2);
         print("교집합 : " + temp1);
+
+
 //       합집합 : addAll;
+        Set<String> temp2 = new HashSet<>(myStr1);
+        temp2.addAll(myStr2);
+        print("합집합 : " + temp2);
+
+
 //       차집합 : removeAll;
+        Set<String> temp3 = new HashSet<>(myStr1);
+        temp3.removeAll(myStr2);
+        print("차집합 : " + temp3);
 
-        // List를 인자값으로 받아 초기값 세팅 가능
-        // 배열인 경우에는 asList(배열);
+
+//      LinkedHashSet. TreeSet
+        Set<String> mySet3 = new TreeSet<>();
+        mySet.add("1");
+        mySet.add("2");
+        mySet.add("3");
+        mySet.add("4");
+        mySet.add("5");
+        mySet.add("6");
 
 
+
+        Set<String> mySet4 = new TreeSet<>();
 
 
 
