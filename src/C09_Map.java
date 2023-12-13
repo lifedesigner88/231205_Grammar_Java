@@ -77,31 +77,122 @@ public class C09_Map {
             print(S + "를 " + myMap2.get(S) +"명이 좋아합니다.");
 
 
-/*      // upload
-import java.util.*;
+//import java.util.*;
+//
+//
+//        class Solution {
+//            public String solution(String[] participant, String[] completion) {
+//                String answer = "";
 
-class Solution {
-    public String solution(String[] participant, String[] completion) {
 
-        String answer = "";
-        Map<String, Integer> members = new HashMap<>();
 
-        for (String p : participant)
-            members.put(p , members.getOrDefault(p, 0) + 1 ) ;
 
-        for (String c : completion)
-            if (members.containsKey(c))
-                members.put(c, members.get(c) - 1);
+//         // 버블정렬
 
-        for (String a : members.keySet())
-            if (members.get(a) == 1)
-                answer = a;
+//         int partiLength = participant.length;
+//         int completLength = completion.length;
 
-        return answer;
-    }
-}
-        */
+//         int count = 0 ;
+//         for (int i = 0; i < partiLength - 1; i++){
+//             for (int j = 0; j < partiLength - 1; j++ )
+//                 if ( participant[j].compareTo(participant[j+1]) < 0){
+//                     String temp = participant[j];
+//                     participant[j] = participant[j+1];
+//                     participant[j+1] = temp;
+//                 }
 
+//             for (int j = 0; j < completLength - 1; j++ )
+//                 if ( completion[j].compareTo(completion[j+1]) < 0){
+//                     String temp = completion[j];
+//                     completion[j] = completion[j+1];
+//                     completion[j+1] = temp;
+//                 }
+
+//             if ( !participant[partiLength-i-1].equals(completion[completLength-i-1]) ){
+//                 answer = participant[partiLength-i-1];
+//                 break;
+//             }
+//             count++;
+//         }
+//             if (count + 1 == participant.length)
+//                 answer = participant[0];
+
+
+
+//     퀵 정렬 이용 (어레이 내장)
+
+//         int length = participant.length;
+//         Arrays.sort(participant);
+//         Arrays.sort(completion);
+
+//         int count = 0;
+//         for (String a : completion)
+//             if ( !a.equals(participant[count++])){
+//                 answer = participant[--count];
+//                 break;
+//             }
+//         if (count + 1 == participant.length)
+//              answer = participant[participant.length-1];
+
+
+
+
+//          제거
+//         Map<String, Integer> members = new HashMap<>();
+
+//         for (String p : participant)
+//                 members.put(p , members.getOrDefault(p, 0) + 1 ) ;
+
+//         for (String c : completion)
+//             if (members.get(c) == 1)
+//                 members.remove(c);
+//             else
+//                 members.put(c, members.get(c) -1);
+
+//         for (String a : members.keySet())
+//             if (members.get(a) == 1)
+//                 answer = a;
+//
+
+
+
+
+
+//          제거 안함.
+//         Map<String, Integer> members = new HashMap<>();
+
+//         for (String p : participant)
+//                 members.put(p , members.getOrDefault(p, 0) + 1 ) ;
+
+//         for (String c : completion)
+//             if (members.containsKey(c))
+//                 members.put(c, members.get(c) - 1);
+
+//         for (String a : members.keySet())
+//             if (members.get(a) == 1)
+//                 answer = a;
+
+//                return answer;
+//            }
+//        }
+
+
+
+        Map<String, Integer> myLinkedMap = new LinkedHashMap<>();
+        myLinkedMap.put("hello5", 1);
+        myLinkedMap.put("hello4", 1);
+        myLinkedMap.put("hello3", 1);
+        myLinkedMap.put("hello2", 1);
+
+        print(myLinkedMap + "");
+
+        Map<String, Integer> myTreeMap = new TreeMap<>();
+        myTreeMap.put("hello5", 1);
+        myTreeMap.put("hello1", 1);
+        myTreeMap.put("hello3", 1);
+        myTreeMap.put("hello2", 1);
+
+        print(myTreeMap + "");
 
 
 
