@@ -1,8 +1,11 @@
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+package Basic;
 
-public class C11_Stack_Queue {
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.stream.Collectors;
+
+
+public class C11_StackQueueDeque{
     public static void main(String[] args) {
 
 
@@ -30,7 +33,16 @@ public class C11_Stack_Queue {
 
         Scanner myScan = new Scanner(System.in);
 
-        while(true) {
+
+
+
+
+
+
+
+
+
+
 
             print("");
             print("(뒤로가기: 1) (히스토리: 2)");
@@ -55,10 +67,73 @@ public class C11_Stack_Queue {
             }
 
 
+
+
+
+        Queue<Integer> myQue = new LinkedList<>();
+        myQue.add(10);
+        myQue.add(20);
+        myQue.add(30);
+        myQue.add(40);
+        print(myQue.poll());
+        print("큐 출력 : " + myQue);
+
+        Queue<String> docPrinter= new LinkedList<>();
+
+        docPrinter.add("문서1");
+        docPrinter.add("문서2");
+        docPrinter.add("문서3");
+        docPrinter.add("문서4");
+
+        while(!docPrinter.isEmpty())
+            print("현재 인쇄 중인 문서 " + docPrinter.poll());
+
+
+//      길이의 제한이 있는 큐 : ArrayBlockingQueue
+        Queue<String> myQue1 = new ArrayBlockingQueue<>(3);
+        myQue1.offer("hellow1");
+        myQue1.offer("hellow2");
+        print(myQue1.offer("hellow3"));         //true
+        print("" + myQue1.offer("hellow4"));    //false
+
+
+//       우선순위 큐 (PriorityQueue)
+
+        Queue<Integer> pq = new PriorityQueue();
+        pq.add(1);
+        pq.add(2);
+        pq.add(7);
+        pq.add(6);
+        pq.add(5);
+        pq.add(4);
+        pq.add(4);
+        pq.add(4);
+
+        print("우선순위큐 : " + pq);
+
+        while(!pq.isEmpty()) {
+            print(pq.poll());
+            print("우선순위큐 : " + pq);
+
         }
 
-        //  StackOverFlow
+        Deque<Integer> myDeque = new ArrayDeque();
 
+        myDeque.addFirst(10);
+
+        print("덱 출력" + myDeque);
+//
+//    myDeque.addLast(20);
+//    myDeque.addLast(21);
+//    myDeque.addLast(22);
+//        print("덱 출력" + myDeque);
+//
+//    myDeque.pollFirst();
+//        print("퍼스트 출력" + myDeque);
+
+        myDeque.pollLast();
+        print(myDeque.peekLast());
+        print("라스트 출력" + myDeque);
 
 
     }   // main
