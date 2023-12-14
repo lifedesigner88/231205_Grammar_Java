@@ -45,23 +45,10 @@ class Person {
     private String name ;
     private String email;
     private String password;
-
     private int age;
-
-
-//    String whoIs(){
-//        return "내 이름은 " + name      + "입니다. "
-//         + "이메일은 "      + email     + "이고, "
-//         + "비밀번호는 "    + password   + "이며, "
-//         + "나이는 "       + age        + "살 입니다.";
-//
-//    }
-
-
     public String getName() {
         return name;
     }
-
 
     public void setName(String name) {
         if (name.length() > 10)
@@ -69,9 +56,6 @@ class Person {
         else
             this.name = name;
     }
-
-
-
     public String getEmail() {
         return email;
     }
@@ -82,9 +66,6 @@ class Person {
         else
             this.email = email;
     }
-
-
-
     public int getAge() {
         return age;
     }
@@ -95,11 +76,68 @@ class Person {
         else
             this.age = age;
     }
-
-
-
     private void print(String a) {
         System.out.println(a);
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

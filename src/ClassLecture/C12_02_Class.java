@@ -58,9 +58,6 @@ public class C12_02_Class {
 
 
 
-
-
-
     private static void print(String a) {
         System.out.println(a);
     }
@@ -101,3 +98,61 @@ class myCalInstansce{
 // this는 객체 그 자신을 의미한다.
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
