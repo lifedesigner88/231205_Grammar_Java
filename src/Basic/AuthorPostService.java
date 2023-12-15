@@ -91,6 +91,7 @@ public class AuthorPostService {
                     print("******* 상세조회 희망 아이디(id)입력하세요.. *******"); print("");
                     print("id:"); Long authorId = Long.parseLong(myScan.nextLine());
 
+                    Author temp = null;
                     for(Author a : auList)
                         if (a.getId() == authorId)
                             print("     "   + a.getName() + ": "
@@ -177,12 +178,12 @@ class Post{
     private Long id ;
     private String title;
     private String contents;
-    private Long author_id;
+    private Author author;
 
-    Post(Long author_id, String title, String contents) {
+    Post(Author author, String title, String contents) {
 
         this.id = static_id++;
-        this.author_id = author_id;
+        this.author = author;
         this.title = title;
         this.contents = contents;}
 
@@ -190,7 +191,7 @@ class Post{
         print("");
         print(  "*** 게시글 작성 완료!" +
                 " >> 아이디:" + id +
-                "   작성자:" + author_id +
+                "   작성자:" + author.getName() +
                 "   제목:" + title +
                 "   내용은:" + contents +
                 " 입니다.");
@@ -200,5 +201,5 @@ class Post{
     public Long getId() {return id;}
     public String getTitle() {return title;}
     public String getContents() {return contents;}
-    public Long getAuthor_id() {return author_id;}
+    public Author getAuthor_id() {return author;}
 }
