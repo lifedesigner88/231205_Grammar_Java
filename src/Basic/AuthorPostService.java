@@ -22,29 +22,6 @@ public class AuthorPostService {
             print("     5. 게시글 작성자 조회(id)");
             String select = myScan.nextLine();
 
-
-//            Author author1 = new Author("세종","lide@naver.com","12313");
-//            Author author2 = new Author("종균","good@google.com","12341");
-//            Author author3 = new Author("종현","koim@gmail.com","44442");
-//            Author author4 = new Author("도훈","123@outlook.kr","14123123");
-//
-//            auList.add(author1);
-//            auList.add(author2);
-//            auList.add(author3);
-//            auList.add(author4);
-
-//            Post post1 = new Post(0L,"동해물과","백두산이 마르고 닳도록");
-//            Post post2 = new Post(1L,"하느님이","보우 하사 우리나라 만세 입니다.");
-//            Post post3 = new Post(2L,"무궁화","삼천리 화려강산 대한사람");
-//            Post post4 = new Post(3L,"대한으로","길아보전하세 룰루루룰");
-
-/*            poList.add(post1);
-            poList.add(post2);
-            poList.add(post3);
-            poList.add(post4);*/
-
-
-
             switch (select){
 
                 case "1" :
@@ -59,7 +36,6 @@ public class AuthorPostService {
                     author.printAuthor();
                     break;
 
-
                 case "2" :
                     print("");
                     print("******* 글을 작성해주세요. *******");
@@ -70,17 +46,19 @@ public class AuthorPostService {
                     while(true) {
                         print("e메일입력:");
                         email = myScan.nextLine();
-                        if(email.equals("1")) break;
 
-                        for (Author a : auList)
-                            if (a.getEmail() == email){
-                                auTemp = a;
-                                break; }
+                        if(email.equals("1"))
+                            break ;
 
-                        if (auTemp == null)
-                            print("없는 이메일 입니다. 다시 입력해주세요");
                         else
-                            break;
+                            for (Author a : auList)
+                                if (a.getEmail().equals(email))
+                                    auTemp = a;
+
+                        if (auTemp == null) {
+                            print("없는 이메일 입니다. 다시 입력해주세요");
+                            continue;}
+
 
                         print("제목:"); String title = myScan.nextLine();
                         print("내용:");String contents = myScan.nextLine();
@@ -88,11 +66,9 @@ public class AuthorPostService {
                         Post post = new Post(auTemp,title,contents);
                         poList.add(post);
                         post.printAuthor();
-
+                        break;
 
                     }
-
-
 
                     break;
 
@@ -109,32 +85,40 @@ public class AuthorPostService {
                     break;
 
 
-//                case "4" :
-//
-//                    print("");
-//                    print("******* 상세조회 희망 이메일을 입력하세요.. *******"); print("");
-//                    print("Your email:"); String e_ForSerch = myScan.nextLine();
-//
-//                    Author temp = null;
-//                    for(Author a : auList)
-//                        if (a.getEmail() == e_ForSerch)
-//                            temp = a;
-//
-//                    int count = 0;
-//                    for(Post a : poList)
-//                        if (a.getAuthor_id() == authorId)
-//                            count++;
-//                    print("     회원님의 작성글수는 : "+ count + "개입니다.");
-//                    break;
-//
-//
-//                case "5" :
-//
-//                    print("");
-//                    print("******* 상세조회 희망 아이디(id)입력하세요.. *******"); print("");
-//
-//
-//
+                case "4" :
+
+                    print("");
+                    print("******* 상세조회 희망 이메일을 입력하세요.. *******"); print("");
+                    print("Your email:"); String emailForSerch = myScan.nextLine();
+
+                    Author temp = null;
+
+                    while(true) {
+                        for (Author a : auList)
+                            if (a.getEmail().equals(emailForSerch))
+                                temp = a;
+
+                        if (temp == null) {
+                            print("없는 이메일 입니다. 다시 입력해주세요");
+                            continue;
+                        }
+
+                        print(temp.getName() + "회원님의 작성글수는 : " + temp.postedSize() + "개이고.");
+                        print("이메일 주소는: " + temp.getEmail()
+                                + "     비밀번호는: " + temp.getPassword() + " 입니다.");
+                        break;
+
+                    }
+                    break;
+
+
+                case "5" :
+
+                    print("");
+                    print("******* 상세조회 희망 아이디(id)입력하세요.. *******"); print("");
+
+
+
 
                 default :
                     print("잘못 입력하셨습니다");
@@ -164,18 +148,19 @@ public class AuthorPostService {
 class Author{
     static Long static_id = 0L;
 
-    private Long id;
-    private String name;
-    private String email;
-    private String password;
-    private ArrayList<Post> poList;
+    private final Long id;
+    private final String name;
+    private final String email;
+    private final String password;
+    private final ArrayList<Post> poList;
 
     Author( String name, String email, String passwrod){
 
         this.id = static_id++;
         this.name = name;
         this.email = email;
-        this.password = passwrod;}
+        this.password = passwrod;
+        this.poList = new ArrayList<>();}
 
     void printAuthor(){
         print("");
@@ -187,6 +172,7 @@ class Author{
                 " 입니다.");
     }
 
+    int postedSize(){return poList.size();}
     void addPostList(Post PoList){this.poList.add(PoList);}
     void print(String a){System.out.println(a);}
     public Long getId() {return id;}
@@ -200,19 +186,18 @@ class Author{
 class Post{
     static Long static_id = 0L;
 
-    private Long id;
-    private String title;
-    private String contents;
-    private Author author;
+    private final Long id;
+    private final Author author;
+    private final String title;
+    private final String contents;
 
     Post(Author author, String title, String contents) {
-
-
 
         this.id = static_id++;
         this.author = author;
         this.title = title;
-        this.contents = contents;}
+        this.contents = contents;
+        author.addPostList(this);}
 
     void printAuthor(){
         print("");
