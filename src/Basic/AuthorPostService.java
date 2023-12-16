@@ -60,18 +60,17 @@ public class AuthorPostService {
                             print("Post_id:" + a.getId() + "  제목:" + a.getTitle()); break;} break;
 
 
-
                 case "4" :          // 게시글 작성
                     print("");
                     print("******* 글을 작성해주세요. *******");
                     print("뒤로가기: 1");
                     while(true) {
-                        print("e메일입력:");email = myScan.nextLine();
-                        if(email.equals("1")) break;
+                        print("e메일입력:");String emailId = myScan.nextLine();
+                        if(emailId.equals("1")) break;
 
                         Author auTemp = null;
                         for (Author a : auList)
-                            if (a.getEmail().equals(email)) {auTemp = a; break;}
+                            if (a.getEmail().equals(emailId)) {auTemp = a; break;}
                         if (auTemp == null) {print("없는 이메일 입니다. 다시 입력해주세요"); continue;}
 
                         print("제목:"); String title = myScan.nextLine();
@@ -145,7 +144,6 @@ class Author{                       // 회원정보
                 "   메일:" + email +
                 "   비밀번호:" + password +
                 " 입니다.");}
-
 
     Long getId() {return id;}
     String getName() {return name;}
