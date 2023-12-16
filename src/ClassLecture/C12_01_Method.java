@@ -1,5 +1,6 @@
 package ClassLecture;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class C12_01_Method {
@@ -7,7 +8,7 @@ public class C12_01_Method {
         print("");
 
 
-        print(sumAcc(100,200));
+//        print(sumAcc(100,200));
 
     // 같은 클래스 내의 method들 사이에서의 호출은
     // static 메서드라 할지라도 클래스명 생략가능
@@ -19,8 +20,8 @@ public class C12_01_Method {
 
 
 
-        primePrint(8000000);
-        isPrimePrint(1231);
+        primePrint(97);
+//        isPrimePrint(1231);
 
 
 
@@ -29,14 +30,18 @@ public class C12_01_Method {
 
     }    // main
 
-
+    List<Integer> prime = new ArrayList<>();
 
     static void primePrint(int number) {
         print(1);
-        for (int i = 2; i < number; i++)
-            if(isPrime(i))
+        print(2);
+        int counter = 2;
+        for (int i = 3; i <= number; i+=2)
+            if(isPrime(i)) {
                 print(i);
-        print(number);
+                counter++;
+            }
+        print("소수의 개수는:" + counter);
     }
 
 

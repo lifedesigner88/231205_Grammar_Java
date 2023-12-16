@@ -297,8 +297,8 @@ class Solution {
 
         String str = new String("dsf");
 
-
-
+        String[] arr2 = {} ;
+        String.join ("", arr2);
 // 문자열 밀기 풀이.
 //
 //    class Solution {
