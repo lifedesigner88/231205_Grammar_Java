@@ -43,6 +43,17 @@ public class C08_List {
 
 
 
+//        Integer[] array = stack.toArray(new Integer[stack.size()]);
+//
+//        Integer[] array = new Integer[stack.size()];
+//        int index = 0;
+//
+//        while (!stack.isEmpty()) {
+//            array[index++] = stack.pop();
+//        }
+
+
+
 
         // 2023.12.12
 
@@ -181,7 +192,6 @@ public class C08_List {
 // 1-2
         for (String S : str) stList.add(S);
         Collections.addAll(stList, str);
-
 // 1-3
         List<String> stList3 = Arrays.stream(str)
                 .collect(Collectors.toList());
@@ -192,7 +202,6 @@ public class C08_List {
 
         print("String Linked -> : " + stList.toString());
         String[] stArr1 = stList.toString().split(", ");
-
         print("String Linked -> : " + Arrays.toString(stArr1));
 
         String[] stArr2 = stList.stream().toArray(a -> new String[a]);

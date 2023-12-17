@@ -24,7 +24,6 @@ public class C11_StackQueueDeque{
         print("");
 
 
-
         while(!myStr.isEmpty())
             print("while, isEmpty 활용하여 모두 팝 : " + myStr.pop());
 
@@ -34,10 +33,16 @@ public class C11_StackQueueDeque{
         Scanner myScan = new Scanner(System.in);
 
 
+//      Stack to Array;
+//        Integer[] array = stack.toArray(new Integer[stack.size()]);
+//
 
-
-
-
+//        Integer[] array = new Integer[stack.size()];
+//        int index = 0;
+//
+//        while (!stack.isEmpty()) {
+//            array[index++] = stack.pop();
+//        }
 
 
 
@@ -99,7 +104,7 @@ public class C11_StackQueueDeque{
 
 //       우선순위 큐 (PriorityQueue)
 
-        Queue<Integer> pq = new PriorityQueue();
+        Queue<Integer> pq = new PriorityQueue<>();
         pq.add(1);
         pq.add(2);
         pq.add(7);
@@ -117,10 +122,9 @@ public class C11_StackQueueDeque{
 
         }
 
-        Deque<Integer> myDeque = new ArrayDeque();
-
+        Deque<Integer> myDeque = new ArrayDeque<>();
+        Deque<Integer> myDeque2 = new LinkedList<>();
         myDeque.addFirst(10);
-
         print("덱 출력" + myDeque);
 //
 //    myDeque.addLast(20);

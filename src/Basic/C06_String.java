@@ -59,7 +59,7 @@ public class C06_String {
         String mySt4 = "hello";
 */
 
-
+        String mySt2 = "hello java java";
 
 //      String method 들 입니다.
 
@@ -263,11 +263,14 @@ class Solution {
 */
 
 
+//        String before = "asdf";
+//        char[] a = before.toCharArray();
+//        String(a)
+
 // join : String[] -> String 합치기
 
         String[] arr = {"html", "java", "java-script", "python"};
         print(String.join(" ",arr));
-
 // String 과 int의 형변환
 
         int a = 10;
@@ -299,6 +302,22 @@ class Solution {
 
         String[] arr2 = {} ;
         String.join ("", arr2);
+
+
+        int[][] board = {{0, 1, 2}, {1, 2, 3}, {2, 3, 4}, {3, 4, 5}};
+
+        int k = 3;
+
+
+                int answer = 0;
+
+                for (int row = 0; row < board.length; row++)
+                    for (int col = 0; row + col <= k; col++)
+                        answer += board[row][col];
+
+                print("정답은" + answer);
+
+
 // 문자열 밀기 풀이.
 //
 //    class Solution {

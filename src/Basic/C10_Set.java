@@ -1,5 +1,6 @@
 package Basic;
 
+
 import java.util.*;
 
 public class C10_Set {
@@ -100,7 +101,7 @@ public class C10_Set {
 
 
         Set<String> mySet4 = new TreeSet<>();
-
+        Set<String> mySet5 = new LinkedHashSet<>();
 
 
 
