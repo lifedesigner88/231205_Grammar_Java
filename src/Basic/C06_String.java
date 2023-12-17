@@ -60,7 +60,6 @@ public class C06_String {
 */
 
         String mySt2 = "hello java java";
-
 //      String method 들 입니다.
 
 /*
