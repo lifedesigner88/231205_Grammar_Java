@@ -14,7 +14,7 @@ print("");
         List<List<Integer>> combi = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
 
-        int n = 20;          // 구하려는 조합의 크기
+        int n = 9;          // 구하려는 조합의 크기
 
         long start = System.currentTimeMillis();
         combi(n,0,myList,combi,temp);
