@@ -1,16 +1,12 @@
 package ClassLecture;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class C12_07_CombiPermu {
     public static void main(String[] args) {
 
 
-        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
-        List<List<Integer>> combi = new ArrayList<>();
-        List<Integer> temp = new ArrayList<>();
+print("");
 
 
 //        for (int i = 0; i < myList.size(); i++) {
@@ -29,9 +25,37 @@ public class C12_07_CombiPermu {
 //
 //        print("조합 리스트를 담은 리스트 출력: " + combi);
 
-        combi(4,0,myList,combi,temp);
+
+        List<Integer> myList = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+        List<List<Integer>> combi = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+
+        int n = 4;
+        combi(n,0,myList,combi,temp);
+
+
+
+
         print("조합 리스트를 담은 리스트 출력: " + combi);
         print("조합갯수 " + combi.size());
+
+
+
+        List<Set<Integer>> mySetList = new ArrayList<>();
+        Set<Integer> mySet= new LinkedHashSet<>();
+
+        for (int i = 0; i < n; i++) {
+            for (List<Integer> a : combi)
+                mySet.add(a.get(i));
+            mySetList.add(new LinkedHashSet<>(mySet));
+            mySet.clear();}
+
+        print("" + mySetList);
+
+
+
+
+
 
 
 
@@ -77,19 +101,71 @@ public class C12_07_CombiPermu {
     }
     static void print(String a){System.out.println(a);}
 
+
+
+
     static void combi(int n, int start, List<Integer> myList, List<List<Integer>> combi, List<Integer> temp){
 
        if (temp.size() == n)
-           combi.add(new ArrayList<>(temp));
+           combi.add(temp);
        else
             for (int i = start; i < myList.size() ; i++) {
                 temp.add(myList.get(i));
-                combi( n, i+1, myList,combi,temp);
+                combi(n, i + 1, myList, combi, temp);
                 temp.remove(temp.size()-1);}
-
 
     }
 }
+
+//          start + length - n + 1
+
+/*
+
+
+
+    for (int i = 0; i < 5    0 + 8 - 4 + 1 ; i++) {
+        temp.add(myList.get(0));
+
+            for (int i = 1; i < 6   1 + 8 - 4 ; i++) {
+                temp.add(myList.get(1));
+
+                    for (int i = 2; i < 7   2 + 8 - 4 ; i++) {
+                        temp.add(myList.get(2));
+
+                            for (int i = 3; i < 8 3 + 8 - 4 ; i++) {
+                                temp.add(myList.get(3));
+                                  combi(n, i + 1, myList, combi, temp);
+                                temp.remove(temp.size()-1);}
+                        temp.remove(temp.size()-1);}
+                temp.remove(temp.size()-1);}
+        temp.remove(temp.size()-1);}
+
+
+    for (int i = 0; i < myList.size() ; i++) {
+        temp.add(myList.get(i));
+
+            for (int i = start; i < myList.size() ; i++) {
+                temp.add(myList.get(i));
+
+                    for (int i = start; i < myList.size() ; i++) {
+                        temp.add(myList.get(i));
+
+                            for (int i = start; i < myList.size() ; i++) {
+                                temp.add(myList.get(i));
+                                  combi(n, i + 1, myList, combi, temp);
+                                temp.remove(temp.size()-1);}
+                        temp.remove(temp.size()-1);}
+                temp.remove(temp.size()-1);}
+        temp.remove(temp.size()-1);}
+*/
+
+
+
+
+
+
+
+
 
 //
 //        [1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 3, 6], [1, 2, 3, 7],
