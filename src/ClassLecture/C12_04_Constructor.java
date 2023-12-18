@@ -1,6 +1,6 @@
 package ClassLecture;
 
-public class C12_05_Constructor {
+public class C12_04_Constructor {
     public static void main(String[] args) {
         print("");
 

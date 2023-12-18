@@ -28,6 +28,20 @@ public class C11_StackQueueDeque{
             print("while, isEmpty 활용하여 모두 팝 : " + myStr.pop());
 
 
+//        신기한 풀이법
+//        Stack<Integer> stack = new Stack<>();
+//
+//        for (String w : s.split(" ")) {
+//            if (w.equals("Z")) {
+//                stack.pop();
+//            } else {
+//                stack.push(Integer.parseInt(w));
+//            }
+//        }
+//        for (int i : stack) {
+//            answer += i;
+//        }
+
 //    앞으로 가기 뒤로 가기
 
         Scanner myScan = new Scanner(System.in);
