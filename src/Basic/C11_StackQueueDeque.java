@@ -22,7 +22,7 @@ public class C11_StackQueueDeque{
         print("Stack Size : " + myStr.size());
         print("Stack isEmpty : " + myStr.isEmpty());
         print("");
-
+        myStr.
 
         while(!myStr.isEmpty())
             print("while, isEmpty 활용하여 모두 팝 : " + myStr.pop());
