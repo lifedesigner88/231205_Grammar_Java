@@ -8,24 +8,6 @@ public class C12_07_CombiPermu {
 
 print("");
 
-
-//        for (int i = 0; i < myList.size(); i++) {
-//            temp.add(myList.get(i));
-//
-//            for (int j = i + 1; j < myList.size(); j++) {
-//                temp.add(myList.get(j));
-//
-//                    combi.add(new ArrayList<>(temp));
-//
-//                temp.remove(temp.size()-1);
-//            }
-//
-//            temp.remove(temp.size()-1);
-//        }
-//
-//        print("조합 리스트를 담은 리스트 출력: " + combi);
-
-
         List<Integer> myList = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                                             11, 12, 13, 14, 15, 16, 17, 18, 19,
                                                             20, 21, 22, 23, 24,25,26,27,28,29));
@@ -48,9 +30,8 @@ print("");
 
 //        print("조합 리스트를 담은 리스트 출력: " + combi);
 //        print("조합갯수 " + combi.size());
-
-
 //
+//        // 조합 구성요소 체크 하는 코드
 //        List<Set<Integer>> mySetList = new ArrayList<>();
 //        Set<Integer> mySet= new LinkedHashSet<>();
 //
