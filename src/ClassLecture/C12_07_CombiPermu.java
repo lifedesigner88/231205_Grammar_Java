@@ -82,7 +82,7 @@ public class C12_07_CombiPermu {
        if (temp.size() == n)
            combi.add(new ArrayList<>(temp));
        else
-            for (int i = start; i < myList.size(); i++) {
+            for (int i = start; i < myList.size() ; i++) {
                 temp.add(myList.get(i));
                 combi( n, i+1, myList,combi,temp);
                 temp.remove(temp.size()-1);}
