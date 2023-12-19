@@ -8,7 +8,7 @@ public class C12_07_CombiPermu {
 
 print("");
 
-        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
         List<List<Integer>> combi = new ArrayList<>();
         List<List<Integer>> enhancedCombi = new ArrayList<>();
@@ -19,7 +19,7 @@ print("");
 
 
 
-        int n = 2;          // 구하려는 조합의 크기
+        int n = 6;          // 구하려는 조합의 크기
         print(myList.size() + "개의 요소를 가진 집합에서 " + n + "개의 순열 또는 조합 수");print("");
 
 
@@ -44,6 +44,7 @@ print("");
 //        print("" + enhancedCombi);
         print("갯수: " + enhancedCombi.size()); print("");
 
+/*
 
 
 //        순열
@@ -63,7 +64,7 @@ print("");
 
         List<List<Integer>> permuSum = new ArrayList<>();
         permuSum(2,myList,permuSum,temp,visited);
-        print("" + permuSum);
+//        print("" + permuSum);
         print("갯수: " + permuSum.size()); print("");
 
 
@@ -74,8 +75,9 @@ print("");
         for(int i = 0; i < myList.size(); i++){
             permuSum(i+1,myList,permuSumAll,temp,visited);}
 
-        print("" + permuSumAll);
+//        print("" + permuSumAll);
         print("갯수: " + permuSumAll.size()); print("");
+
 
 
 
@@ -85,7 +87,7 @@ print("");
         System.out.println("가장 큰 값은: " + maxNum[0]);
 
 
-
+*/
 
 
 //        // 조합 구성요소 체크 하는 코드
@@ -112,10 +114,11 @@ print("");
 //        향상 조합
     static void combi(int n, int start, List<Integer> myList, List<List<Integer>> combi, List<Integer> temp){
 
-        if (temp.size() == n)
-           combi.add(new ArrayList<>(temp));
-        else
-            for (int i = start; i < myList.size() ; i++) {
+        if (temp.size() == n){
+            combi.add(new ArrayList<>(temp));
+            return;}
+
+        for (int i = start; i < myList.size() ; i++) {
                 temp.add(myList.get(i));
                 combi(n, i + 1, myList, combi, temp);
                 temp.remove(temp.size()-1);}
@@ -126,13 +129,14 @@ print("");
 //        향상 조합
     static void enhancedCombi(int n, int start, int ignore, List<Integer> myList, List<List<Integer>> combi, List<Integer> temp){
 
-        if (temp.size() == n)
+        if (temp.size() == n){
             combi.add(new ArrayList<>(temp));
-        else
-            for (int i = start; i < myList.size() - ignore ; i++) {
-                temp.add(myList.get(i));
-                enhancedCombi(n, i + 1,ignore-1, myList, combi, temp);
-                temp.remove(temp.size()-1);}
+            return;}
+
+        for (int i = start; i < myList.size() - ignore ; i++) {
+            temp.add(myList.get(i));
+            enhancedCombi(n, i + 1,ignore-1, myList, combi, temp);
+            temp.remove(temp.size()-1);}
 
     }
 
@@ -140,17 +144,18 @@ print("");
 //        순열
     static void permu(int n,  List<Integer> myList, List<List<Integer>> permu, List<Integer> temp, boolean[] visited){
 
-        if (temp.size() == n)
+        if (temp.size() == n) {
             permu.add(new ArrayList<>(temp));
-        else
-            for (int i = 0; i < myList.size() ; i++) {
-                if(!visited[i]) {
-                    temp.add(myList.get(i));
-                    visited[i] = true;
-                        permu(n, myList, permu, temp, visited);
-                    temp.remove(temp.size()-1);
-                    visited[i] = false;}
-            }
+            return;}
+
+        for (int i = 0; i < myList.size() ; i++) {
+            if(!visited[i]) {
+                temp.add(myList.get(i));
+                visited[i] = true;
+                    permu(n, myList, permu, temp, visited);
+                temp.remove(temp.size()-1);
+                visited[i] = false;}
+        }
     }
 
 
@@ -161,15 +166,16 @@ print("");
             int tempNum = 0;
             for (Integer a : temp) tempNum += a;
             if(tempNum >= 6) permu.add(new ArrayList<>(temp));
-        } else
-            for (int i = 0; i < myList.size() ; i++) {
-                if(!visited[i]) {
-                    temp.add(myList.get(i));
-                    visited[i] = true;
-                    permuSum(n, myList, permu, temp, visited);
-                    temp.remove(temp.size()-1);
-                    visited[i] = false;}
-            }
+            return;}
+
+        for (int i = 0; i < myList.size() ; i++) {
+            if(!visited[i]) {
+                temp.add(myList.get(i));
+                visited[i] = true;
+                permuSum(n, myList, permu, temp, visited);
+                temp.remove(temp.size()-1);
+                visited[i] = false;}
+        }
     }
 
 
