@@ -8,7 +8,7 @@ public class C12_07_CombiPermu {
 
 print("");
 
-        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3));
+        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
 
         List<List<Integer>> combi = new ArrayList<>();
         List<List<Integer>> enhancedCombi = new ArrayList<>();
