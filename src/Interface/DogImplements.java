@@ -9,6 +9,8 @@ public class DogImplements implements AnimalInterface1{
 }
 
 
+
+
 class DogMultiImplements implements AnimalInterface1, AnimalInterface2{
 
     @Override

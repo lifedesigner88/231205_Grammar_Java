@@ -9,6 +9,7 @@ public class CatImplements implements AnimalInterface1{
 }
 
 
+
 class CatMultiImplements implements AnimalInterface1, AnimalInterface2{
 
     @Override
