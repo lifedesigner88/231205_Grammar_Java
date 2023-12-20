@@ -15,7 +15,6 @@ public class StaticFinalInterface {
         };
         System.out.println(sejong.my_constant);
 
-
     }
 }
 

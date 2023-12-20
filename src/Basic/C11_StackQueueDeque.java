@@ -86,8 +86,6 @@ public class C11_StackQueueDeque{
 
 
 
-
-
         Queue<Integer> myQue = new LinkedList<>();
         myQue.add(10);
         myQue.add(20);
