@@ -26,6 +26,8 @@ public class C15_02_AnonymouClass {
         cat1.makeSound(3);
         cat2.makeSound(4);
 
+
+
     }// main
 }
 
