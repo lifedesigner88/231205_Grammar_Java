@@ -1,3 +1,4 @@
+package A05_AnonymousLamda;
 
 import java.util.ArrayList;
 import java.util.Collections;
