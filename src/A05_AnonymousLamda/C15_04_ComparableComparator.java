@@ -54,11 +54,6 @@ public class C15_04_ComparableComparator {
         System.out.println(" ");
 
 
-
-
-
-
-
 //        방법1 : Comparator를 익명객체 방식으로 활요하여 정렬, 매개변수 2개
 
 
@@ -91,7 +86,7 @@ public class C15_04_ComparableComparator {
                 return o1.getName().compareTo(o2.getName());
             }});
 
-        for (Student c : studentList) System.out.println(c.toString());
+//        for (Student c : studentList) System.out.println(c.toString());
 
 
 
@@ -100,16 +95,57 @@ public class C15_04_ComparableComparator {
         String[] stArr = {"hello", "java", "C++", "world222"};
         Arrays.sort(stArr, Comparator.reverseOrder());
 
-//        Priority Queue 내림차순
 
+
+//        Priority Queue 내림차순
         Queue<String> myQue = new PriorityQueue<>();
 
 
 
-
-
-
 //        방법2 : Comparable 인터페이스 implemnets 후 compareTo 메서드 구현;
+
+        Collections.sort(studentList);
+//        System.out.println(studentList);
+//        for (Student c : studentList) System.out.println(c.toString());
+
+
+
+
+//        쓰레드 구현방식 : 쓰레드 상속, Runable 방식
+
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < 100; i++)
+                    System.out.println("******");
+            }
+        });
+
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < 100; i++)
+                    System.out.println("******************");
+            }
+        });
+
+        Thread t3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < 100; i++)
+                    System.out.println("******************************");
+            }
+        });
+        t1.start();
+        t2.start();
+        t3.start();
+
+        for(int i = 0; i < 100; i++)
+            System.out.println("************************************************");
+
+
+
+
 
 
 
@@ -119,7 +155,7 @@ public class C15_04_ComparableComparator {
 } // 클래스
 
 
-class Student{
+class Student implements Comparable<Student>{
 
     private final String name;
     private final int age;
@@ -129,16 +165,15 @@ class Student{
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
-    public int getAge() {
-        return age;
-    }
+    public int getAge() {return age;}
+
     @Override
-    public String toString(){
-        return " 이름은: " + this.name + "  나이는:" + this.age;
-    }
+    public String toString(){return " 이름은: " + this.name + "  나이는:" + this.age;}
 
+    @Override
+    public int compareTo(Student o) {   // 매개변수 하나만 받는다.
+        return this.name.compareTo(o.name);
+    }
 }
