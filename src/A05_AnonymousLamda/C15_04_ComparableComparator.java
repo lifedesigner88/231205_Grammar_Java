@@ -1,7 +1,6 @@
 package A05_AnonymousLamda;
 
 import java.util.*;
-import java.util.concurrent.PriorityBlockingQueue;
 
 public class C15_04_ComparableComparator {
     public static void main(String[] args) {
@@ -95,7 +94,7 @@ public class C15_04_ComparableComparator {
         String[] stArr = {"hello", "java", "C++", "world222"};
         Arrays.sort(stArr, Comparator.reverseOrder());
 
-
+        System.out.println(Arrays.toString(stArr));
 
 //        Priority Queue 내림차순
         Queue<String> myQue = new PriorityQueue<>();
@@ -161,3 +160,6 @@ class Student implements Comparable<Student>{
         return this.name.compareTo(o.name);
     }
 }
+
+
+
