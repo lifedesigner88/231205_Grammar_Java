@@ -1,4 +1,3 @@
-package A05_AnonymousLamda;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,11 +9,11 @@ public class C15_04_Applicant {
     public static void main(String[] args) {
         System.out.println();
 
-        List<A05_AnonymousLamda.Applicant> Y_2023 = new ArrayList<>();
+        List<Applicant> Y_2023 = new ArrayList<>();
 
-        A05_AnonymousLamda.Applicant A001 = new A05_AnonymousLamda.Naver(100,35,"세종");
-        A05_AnonymousLamda.Applicant A002 = new A05_AnonymousLamda.Naver(72,95,"철수");
-        A05_AnonymousLamda.Applicant A003 = new A05_AnonymousLamda.Naver(52,100,"영희");
+        Applicant A001 = new Naver(100,35,"세종");
+        Applicant A002 = new Naver(72,95,"철수");
+        Applicant A003 = new Naver(52,100,"영희");
 
         Y_2023.add(A001);
         Y_2023.add(A002);
@@ -28,11 +27,11 @@ public class C15_04_Applicant {
         System.out.println();
 
 
-        List<A05_AnonymousLamda.Applicant> K_2023 = new ArrayList<>();
+        List<Applicant> K_2023 = new ArrayList<>();
 
-        A05_AnonymousLamda.Applicant K001 = new A05_AnonymousLamda.KaKao(100,35,"세종");
-        A05_AnonymousLamda.Applicant K002 = new A05_AnonymousLamda.KaKao(72,95,"철수");
-        A05_AnonymousLamda.Applicant K003 = new A05_AnonymousLamda.KaKao(52,100,"영희");
+        Applicant K001 = new KaKao(100,35,"세종");
+        Applicant K002 = new KaKao(72,95,"철수");
+        Applicant K003 = new KaKao(52,100,"영희");
 
         K_2023.add(K001);
         K_2023.add(K002);
@@ -57,9 +56,9 @@ public class C15_04_Applicant {
 
 
 //        코테점수 기준 람다 활용
-        K_2023.sort(new Comparator<A05_AnonymousLamda.Applicant>() {
+        K_2023.sort(new Comparator<Applicant>() {
             @Override
-            public int compare(A05_AnonymousLamda.Applicant o1, A05_AnonymousLamda.Applicant o2) {
+            public int compare(Applicant o1, Applicant o2) {
                 return o2.getCode_Test() - o1.getCode_Test();}
         });
         System.out.println("카카오 코테점수순위: " + K_2023);
@@ -72,13 +71,13 @@ public class C15_04_Applicant {
 } // 클래스
 
 
-interface Applicant extends Comparable<A05_AnonymousLamda.Applicant>{  // 인스턴스
+interface Applicant extends Comparable<Applicant>{  // 인스턴스
     public int totalScore();
     public int getCode_Test();
     public int getAttendance();
 }
 
-abstract class calculator implements A05_AnonymousLamda.Applicant {     // 추상클래스
+abstract class calculator implements Applicant {     // 추상클래스
     protected int Code_Test;
     protected int Attendance;
     protected String Name;
@@ -97,12 +96,12 @@ abstract class calculator implements A05_AnonymousLamda.Applicant {     // 추�
         return   this.Name + "(" + this.totalScore()+")";}
 
     @Override
-    public int compareTo(A05_AnonymousLamda.Applicant o) {
+    public int compareTo(Applicant o) {
         return (this.totalScore() - o.totalScore())*(-1);}
 
 }
 
-class Naver extends A05_AnonymousLamda.calculator {                     // 구현클래스 1
+class Naver extends calculator {                     // 구현클래스 1
 
     Naver(int Code_Test, int Attendance, String Name) {
         super(Code_Test, Attendance, Name);}
@@ -113,7 +112,7 @@ class Naver extends A05_AnonymousLamda.calculator {                     // 구�
 
 }
 
-class KaKao extends A05_AnonymousLamda.calculator {                    // 구현클래스 2
+class KaKao extends calculator {                    // 구현클래스 2
 
     KaKao(int Code_Test, int Attendance, String Name) {
         super(Code_Test, Attendance, Name);}
