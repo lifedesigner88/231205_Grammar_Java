@@ -117,37 +117,21 @@ public class C15_04_ComparableComparator {
             @Override
             public void run() {
                 for(int i = 0; i < 100; i++)
-                    System.out.println("******");
-            }
-        });
-
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int i = 0; i < 100; i++)
-                    System.out.println("******************");
-            }
-        });
-
-        Thread t3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int i = 0; i < 100; i++)
-                    System.out.println("******************************");
+                    System.out.println("111111111");
             }
         });
         t1.start();
+
+        Thread t2 = new Thread(() -> {
+            for(int i = 0; i < 100; i++)
+                System.out.println("222222222");
+        });
         t2.start();
-        t3.start();
 
-        for(int i = 0; i < 100; i++)
-            System.out.println("************************************************");
-
-
-
-
-
-
+        new Thread(() -> {
+            for(int i = 0; i < 100; i++)
+                System.out.println("333333333");
+        }).start();
 
 
     } // main
