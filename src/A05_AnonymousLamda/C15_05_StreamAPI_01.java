@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.stream;
+import static sun.swing.MenuItemLayoutHelper.max;
 
 public class C15_05_StreamAPI_01 {
     public static void main(String[] args) {
@@ -244,19 +245,32 @@ public class C15_05_StreamAPI_01 {
 //        orElse(), orElseGet(), orElsethrow();
 
 //        orElse() 값이 있으면 해당값 return, 없으면 default 지정값 return
-        System.out.println(opt2.orElse("").compareTo("abc"));
+        System.out.println(opt1.orElse("").compareTo("abc"));
 
 //        orElseGet() 값이 있으면 해당값 return, 없으면 람다함수 또는 메소드참조 실행
-        System.out.println(opt2.orElseGet(String::new).compareTo("abc"));
+        System.out.println(opt1.orElseGet(String::new).compareTo("abc"));
 
 //        orElseThrow() : 값이 있으면 해당값 return, 없으면 지정된 예외 강제 발생;
-        System.out.println(opt2.orElseThrow("").compareTo("abc"));
+        int result1 = opt1.orElseThrow(() -> new NoSuchElementException("객체에 값이 없습니다.")).compareTo("abc");
+        System.out.println(result1);
 
 
+//        OptionalInt, OptionalDouble
+        OptionalInt oi = new ArrayList<>(Arrays.asList(1, 2, 3, 4)).stream()
+                .mapToInt(i -> i)
+                .max();
+
+        if(oi.isPresent());
+        else;
+        System.out.println(oi.orElseThrow(() -> new NoSuchElementException("no Value")));
 
 
+//        stream API => 디버깅이 어렵다.
 
-        print(opt1 + "");
+//        OptionalInt o2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4)).stream()
+//                .peek() => 추가로 공부.
+//                .mapToInt(i -> i);
+//                .max();
 
 
 
