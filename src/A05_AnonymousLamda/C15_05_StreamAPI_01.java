@@ -121,7 +121,7 @@ public class C15_05_StreamAPI_01 {
 //        초기값을 지정하지 않으면 Optional 객체 return.
 //        Optional 객체 : 값이 있을수도 있고, 없을 수도 있다는 것을 명시한 타입(java8이후 추가)
 
-        String a = null;
+        String nullIs = null;
         Optional<String> myOptional = Optional.of("hello");
 
         int result = Arrays.stream(arr6)
@@ -189,12 +189,12 @@ public class C15_05_StreamAPI_01 {
         myStudents.add(new Student("song", 28));
         myStudents.add(new Student("hun", 31));
 
+
 //        findFirst()
         Optional<Student> st1 = myStudents.stream()
                 .filter(Student-> Student.getAge() > 30)
                 .findFirst();
         st1.ifPresent(student -> print("파인드 퍼스트:" + student));
-
 
 
 //        제일 어린 사람
@@ -214,7 +214,7 @@ public class C15_05_StreamAPI_01 {
         OptionalDouble st4 = myStudents.stream()
                 .mapToInt(Student::getAge).average();
 
-        st4.ifPresent(Student -> print("모든 객체의 평균나이는" + Student + "입니다"));
+        st4.ifPresent(Student -> print("모든 객체의 평균 나이는: " + Student + "입니다"));
 
 
 //        30대 이상 선착순
@@ -223,6 +223,40 @@ public class C15_05_StreamAPI_01 {
                 .findFirst();
         st5.ifPresent(Student -> print("30세 이하중 선착순 등록자는 " + Student));
 
+
+
+
+//        기존 자바의 Null 처리
+        String nullIs2 = null;
+
+//        자바 8 이후에 나온 Optional 객체를 통해 특정 객체에 값이 없을지라도 모른다는 것을 명시적으로 표현;
+//        빈값인지 아닌지 check하는 메서드 : isPresent();
+        Optional<String> opt1 = Optional.empty();
+        opt1.ifPresent(s -> s.compareTo("abc"));
+
+//        Optional 객체 생성
+        Optional<String> opt2 = Optional.ofNullable("hello"); //null 이 있을 수도 있음을 의미;
+
+
+
+
+//        orElse관련, 메서드 사용하여 null(빈값)처리
+//        orElse(), orElseGet(), orElsethrow();
+
+//        orElse() 값이 있으면 해당값 return, 없으면 default 지정값 return
+        System.out.println(opt2.orElse("").compareTo("abc"));
+
+//        orElseGet() 값이 있으면 해당값 return, 없으면 람다함수 또는 메소드참조 실행
+        System.out.println(opt2.orElseGet(String::new).compareTo("abc"));
+
+//        orElseThrow() : 값이 있으면 해당값 return, 없으면 지정된 예외 강제 발생;
+        System.out.println(opt2.orElseThrow("").compareTo("abc"));
+
+
+
+
+
+        print(opt1 + "");
 
 
 

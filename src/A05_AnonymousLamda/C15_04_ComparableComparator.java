@@ -152,7 +152,7 @@ class Student implements Comparable<Student>{
     public int getAge() {return age;}
 
     @Override
-    public String toString(){return " 이름은: " + this.name + "  나이는:" + this.age;}
+    public String toString(){return " 이름은:" + this.name + "  나이는:" + this.age;}
 
     @Override
     public int compareTo(Student o) {   // 매개변수 하나만 받는다.
