@@ -7,7 +7,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.stream;
-import static sun.swing.MenuItemLayoutHelper.max;
 
 public class C15_05_StreamAPI_01 {
     public static void main(String[] args) {
@@ -260,18 +259,14 @@ public class C15_05_StreamAPI_01 {
                 .mapToInt(i -> i)
                 .max();
 
-        if(oi.isPresent());
-        else;
+        if(oi.isPresent());else;
         System.out.println(oi.orElseThrow(() -> new NoSuchElementException("no Value")));
 
-
 //        stream API => 디버깅이 어렵다.
-
 //        OptionalInt o2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4)).stream()
 //                .peek() => 추가로 공부.
 //                .mapToInt(i -> i);
 //                .max();
-
 
 
     } // main
