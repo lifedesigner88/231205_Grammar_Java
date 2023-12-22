@@ -153,8 +153,75 @@ public class C15_05_StreamAPI_01 {
         stAnswer4.ifPresent(C15_05_StreamAPI_01::print);
 
 
-//       count(), sum(), min(), findFirst(), findAny()
+//       count(), sum(), min(), findFirst()
+//        최소, 최대, 평균, 총합 : min/max/average/sum
+        List<Integer> myList3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
 
+        OptionalInt min = myList3.stream()
+                .mapToInt(i -> i)
+                .min();
+        print("최소값 min: " + min);
+
+
+        OptionalInt max = myList3.stream()
+                .mapToInt(i -> i)
+                .max();
+        print("최대값 max: " + max);
+
+        OptionalDouble average = myList3.stream()
+                .mapToInt(i -> i)
+                .average();
+        print("평균값: " + average);
+
+        int sum = myList3.stream()
+                .mapToInt(i -> i)
+                .sum();
+
+        print("평균값: " + average);
+
+
+
+        List<Student> myStudents = new ArrayList<>();
+        myStudents.add(new Student("jong", 33));
+        myStudents.add(new Student("kim", 25));
+        myStudents.add(new Student("park", 22));
+        myStudents.add(new Student("choi", 35));
+        myStudents.add(new Student("song", 28));
+        myStudents.add(new Student("hun", 31));
+
+//        findFirst()
+        Optional<Student> st1 = myStudents.stream()
+                .filter(Student-> Student.getAge() > 30)
+                .findFirst();
+        st1.ifPresent(student -> print("파인드 퍼스트:" + student));
+
+
+
+//        제일 어린 사람
+        Optional<Student> st2 = myStudents.stream()
+                .min((o1, o2) -> o1.getAge() - o2.getAge());
+        st2.ifPresent(student -> print("제일 어린사람은: " + student));
+
+
+//        30대 이상 인원수
+        long st3 = myStudents.stream()
+                .filter(Student -> Student.getAge() >= 30)
+                .count();
+        print("30대 이상은: " + st3 + "명");
+
+
+//        평균값
+        OptionalDouble st4 = myStudents.stream()
+                .mapToInt(Student::getAge).average();
+
+        st4.ifPresent(Student -> print("모든 객체의 평균나이는" + Student + "입니다"));
+
+
+//        30대 이상 선착순
+        Optional<Student> st5 = myStudents.stream()
+                .filter(Student -> Student.getAge() <= 30)
+                .findFirst();
+        st5.ifPresent(Student -> print("30세 이하중 선착순 등록자는 " + Student));
 
 
 
