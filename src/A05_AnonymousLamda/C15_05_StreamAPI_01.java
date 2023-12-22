@@ -12,22 +12,11 @@ public class C15_05_StreamAPI_01 {
     public static void main(String[] args) {
 
     int[] arr = {20, 1, 4, 12}; // 전통적인 방식
-        for (int j : arr) {
-            System.out.println(j);
-        }
-        System.out.println();
+        for (int j : arr) System.out.print(j);
 
 
-//    데이터와 객체 중심이 아닌, 입력에 따른 출력만이 존재하는 함수형 프로그램 방식
-//    java에서 함수형 프로그래밍을 지원하기 위한 라이브러리 -> StreamApi
-
-//      forEach는 각 요소를 소모하면서 동작을 수행한다.
-        stream(arr).forEach(System.out::println);
-        System.out.println();
-        stream(arr).sorted().forEach(System.out::println);
-        System.out.println();
-        stream(arr).forEach(System.out::println);
-
+//        데이터와 객체 중심이 아닌, 입력에 따른 출력만이 존재하는 함수형 프로그램 방식
+//        java에서 함수형 프로그래밍을 지원하기 위한 라이브러리 -> StreamApi
 
 
 //        스트림의 생성
@@ -45,7 +34,7 @@ public class C15_05_StreamAPI_01 {
 
 
         int[] intArr = {10, 20, 30, 40, 50};
-        IntStream intStream = Arrays.stream(intArr);
+        IntStream intStream = stream(intArr);
 
         int[] intArr2 = intStream.filter(a -> a>20).toArray();
         print("20보다 큰 값 필터링" + Arrays.toString(intArr2));
@@ -56,14 +45,14 @@ public class C15_05_StreamAPI_01 {
 
 
 //        중복제거후 종합 반환
-        int answer = Arrays.stream(intArr3)
+        int answer = stream(intArr3)
                 .distinct()
                 .sum();
         print("중복제거후 종합 반환:" + answer);
 
 //        중복제거 후 새로운 배열 생성
         String[] stArr3 = {"HTML", "Css", "JAVA", "PYTHON", "PYTHON"};
-        String[] stArr4 = Arrays.stream(stArr3)
+        String[] stArr4 = stream(stArr3)
                 .distinct()
                 .toArray(String[]::new);
 
@@ -71,7 +60,7 @@ public class C15_05_StreamAPI_01 {
 
 
 //        Int로 변환
-        int[] myStream = Arrays.stream(stArr3)
+        int[] myStream = stream(stArr3)
                 .distinct()
                 .filter(a -> a.length() <= 3)
                 .mapToInt(String::length).toArray();
@@ -81,12 +70,12 @@ public class C15_05_StreamAPI_01 {
 
 //        숫자 배열 정렬하기.
         int[] arr5 = {5, 1, 2, 3, 5, 7};
-        int[] intStream2 = Arrays.stream(arr5).sorted().toArray();
+        int[] intStream2 = stream(arr5).sorted().toArray();
         print("숫자정렬 int[]로 하는방법" + Arrays.toString(intStream2));
 
 
 //        숫자 리스트 정렬하기
-        List<Integer> myList = new LinkedList<>(Arrays.asList(6, 1, 2, 3, 4, 5, 6));
+        List<Integer> myList = new LinkedList<>(Arrays.asList(6, 1, 2, 3, 4, 5, 6, 8));
 //        collect (구체적인 컬렉션 객체 명시)
         List<Integer> myList2 = myList.stream()
                 .sorted(Comparator.reverseOrder())
@@ -96,7 +85,7 @@ public class C15_05_StreamAPI_01 {
 
 
 //        문자의 정렬
-        List<String> stList = new ArrayList<>(Arrays.asList("java", "python", "C++", "javascript","aaaa"));
+        List<String> stList = new ArrayList<>(Arrays.asList("java", "python", "C++", "javascript", "aaaa"));
 
         List<String> answerList = stList.stream()
                 .filter(a -> a.length() >= 4)
@@ -104,6 +93,37 @@ public class C15_05_StreamAPI_01 {
                 .collect(Collectors.toList());
 
         print("길이가 4이상" + answerList);
+
+
+//        리스트에 모두 10개 더하기
+        int[] arr_plus10 = myList.stream()
+                .mapToInt(a -> a + 10)
+                .sorted()
+                .distinct()
+                .toArray();
+
+        print("리스트에 모두 10 더하기" + Arrays.toString(arr_plus10));
+
+
+//        짝수만 골라서 제곱의 총합
+        int answer2 = Arrays.stream(arr_plus10)
+                .filter(a -> a % 2 == 0)
+                .map(a -> a * a).sum();
+        print("짝수만 골라서 제곱의 총합: " + answer2);
+
+
+
+//        forEach, reduce (스트림 소모)
+        int[] arr6 = {10, 20, 30, 40};;
+        Arrays.stream(arr6).forEach(System.out::println);
+
+
+
+//        reduce 누적연산
+//        초기값을 지정하지 않으면 Optional 객체 return.
+//        Optional 객체 : 값이 있을수도 있고, 없을 수도 있다는 것을 명시한 타입(java8이후 추가)
+//        int result = Arrays.stream(arr6)
+//                .reduce((multi,a) -> multi * a);
 
 
 
