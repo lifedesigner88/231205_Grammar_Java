@@ -117,13 +117,45 @@ public class C15_05_StreamAPI_01 {
         int[] arr6 = {10, 20, 30, 40};;
         Arrays.stream(arr6).forEach(System.out::println);
 
-
-
 //        reduce 누적연산
 //        초기값을 지정하지 않으면 Optional 객체 return.
 //        Optional 객체 : 값이 있을수도 있고, 없을 수도 있다는 것을 명시한 타입(java8이후 추가)
-//        int result = Arrays.stream(arr6)
-//                .reduce((multi,a) -> multi * a);
+
+        String a = null;
+        Optional<String> myOptional = Optional.of("hello");
+
+        int result = Arrays.stream(arr6)
+                .reduce(1,(multi,aa) -> multi * aa);
+        print("누적 곱" + result);
+
+
+        result = Arrays.stream(arr6)
+                .reduce(Integer::sum).getAsInt();
+
+        result = Arrays.stream(arr6)
+                .reduce(Integer::sum)
+                .getAsInt();   // int 값 변환
+
+        print("누적 합" + result);
+
+//
+        String[] stArr5 = {"HTML", "Css", "JAVA", "PYTHON", "PYTHON"};
+        String stAnswer3 = Arrays.stream(stArr5)
+                .reduce((temp, aa) -> temp + ", " + aa)
+                .get(); // String 변환
+
+
+        print(stAnswer3);
+
+        Optional<String> stAnswer4 = Arrays.stream(stArr5)
+                .reduce((temp, aa) -> temp + ", " + aa);
+//        if (stAnswer4.isPresent()) print(stAnswer4.get());
+        stAnswer4.ifPresent(C15_05_StreamAPI_01::print);
+
+
+//       count(), sum(), min(), findFirst(), findAny()
+
+
 
 
 
