@@ -149,7 +149,6 @@ class Student implements Comparable<Student>{
     }
 
     public String getName() {return name;}
-
     public int getAge() {return age;}
 
     @Override
