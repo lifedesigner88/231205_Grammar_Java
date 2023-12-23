@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 public class C15_04_Applicant {
@@ -26,7 +27,6 @@ public class C15_04_Applicant {
         System.out.println("최종합격자: " + Y_2023.get(0));
 
         System.out.println();
-
 
         List<Applicant> K_2023 = new ArrayList<>();
 
@@ -64,7 +64,6 @@ public class C15_04_Applicant {
         });
         System.out.println("카카오 코테점수순위: " + K_2023);
         System.out.println("코테 1등: " + K_2023.get(0));
-
 
 
     } // main

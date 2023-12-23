@@ -1,7 +1,7 @@
 package A05_AnonymousLamda;
 
-import java.sql.SQLOutput;
 import java.util.*;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -224,6 +224,43 @@ public class C15_05_StreamAPI_01 {
         st5.ifPresent(Student -> print("30세 이하중 선착순 등록자는 " + Student));
 
 
+        Stack<Integer> stack = new Stack<>();
+
+            stack.pop()
+
+
+//        Integer List 를
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        // 방법 1
+        int[] arr1 = new int[list.size()];
+        for (int i = 0 ; i < list.size() ; i++)
+            arr1[i] = list.get(i);
+
+        // 방법 2
+        int[] arr2 = list.stream()
+                .mapToInt(i -> i)
+                .toArray();
+
+        // 방법 3
+        int[] arr3 = list.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+        // 방법 4
+        int[] arr4 = list.stream()
+                .filter(Objects::nonNull)
+                .mapToInt(i -> i)
+                .toArray();
+
+
+        String a  = "";
+        a.charAt()
+
+
 
 
 //        기존 자바의 Null 처리
@@ -273,3 +310,4 @@ public class C15_05_StreamAPI_01 {
 
     static void print(String a){System.out.println(a);}
 }
+
