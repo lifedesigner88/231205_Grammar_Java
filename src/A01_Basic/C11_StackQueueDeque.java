@@ -1,5 +1,6 @@
 package A01_Basic;
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -58,30 +59,30 @@ public class C11_StackQueueDeque{
 
 
 
-
-
-
-            print("");
-            print("(뒤로가기: 1) (히스토리: 2)");
-            print("방문할 사이트를 입력해주세요 ");
-            String inputs = myScan.nextLine();
-
-            Stack<String> StackForWeb = new Stack<>();
-
-            if (inputs.equals("1"))
-
-                if (StackForWeb.isEmpty())
-                    print("이전 페이지가 없습니다. 다시 입력해주세요");
-                else
-                    print(StackForWeb.peek() + "페이지로 이동하였습니다.");
-
-            else if (inputs.equals("2"))
-                print("현재 방문 기록" + StackForWeb);
-
-            else {
-                StackForWeb.push(inputs);
-                print(inputs + "페이지로 이동하였습니다.");
-            }
+//
+//
+//
+//            print("");
+//            print("(뒤로가기: 1) (히스토리: 2)");
+//            print("방문할 사이트를 입력해주세요 ");
+//            String inputs = myScan.nextLine();
+//
+//            Stack<String> StackForWeb = new Stack<>();
+//
+//            if (inputs.equals("1"))
+//
+//                if (StackForWeb.isEmpty())
+//                    print("이전 페이지가 없습니다. 다시 입력해주세요");
+//                else
+//                    print(StackForWeb.peek() + "페이지로 이동하였습니다.");
+//
+//            else if (inputs.equals("2"))
+//                print("현재 방문 기록" + StackForWeb);
+//
+//            else {
+//                StackForWeb.push(inputs);
+//                print(inputs + "페이지로 이동하였습니다.");
+//            }
 
 
 
@@ -135,19 +136,37 @@ public class C11_StackQueueDeque{
         Deque<Integer> myDeque = new ArrayDeque<>();
         Deque<Integer> myDeque2 = new LinkedList<>();
         myDeque.addFirst(10);
+        myDeque.addFirst(11);
+        myDeque.addFirst(12);
+        myDeque.addFirst(13);
         print("덱 출력" + myDeque);
-//
-//    myDeque.addLast(20);
-//    myDeque.addLast(21);
-//    myDeque.addLast(22);
-//        print("덱 출력" + myDeque);
-//
-//    myDeque.pollFirst();
-//        print("퍼스트 출력" + myDeque);
+
+        myDeque.addLast(20);
+        myDeque.addLast(21);
+        myDeque.addLast(22);
+        print("덱 출력" + myDeque);
+
+        myDeque.pollFirst();
+        print("퍼스트 출력" + myDeque);
 
         myDeque.pollLast();
         print(myDeque.peekLast());
         print("라스트 출력" + myDeque);
+
+        String answer1 = myDeque.stream()
+                .map(Object::toString)
+                .reduce((temp,str) -> temp + str)
+                .get();
+
+
+        BigInteger bigNumber1 = new BigInteger("100000");
+        BigInteger bigNumber2 = new BigInteger("10000");
+
+        System.out.println("덧셈(+) :" +bigNumber1.add(bigNumber2));
+        System.out.println("뺄셈(-) :" +bigNumber1.subtract(bigNumber2));
+        System.out.println("곱셈(*) :" +bigNumber1.multiply(bigNumber2));
+        System.out.println("나눗셈(/) :" +bigNumber1.divide(bigNumber2));
+        System.out.println("나머지(%) :" +bigNumber1.remainder(bigNumber2));
 
 
     }   // main

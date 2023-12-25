@@ -145,6 +145,34 @@ public class C15_05_StreamAPI_01 {
                 .get(); // String 변환
 
 
+
+        Deque<Integer> myDeque = new LinkedList<>();
+        myDeque.addFirst(10);
+        myDeque.addFirst(11);
+        myDeque.addFirst(12);
+        myDeque.addFirst(13);
+        print("덱 출력" + myDeque);
+
+        myDeque.addLast(20);
+        myDeque.addLast(21);
+        myDeque.addLast(22);
+        print("덱 출력" + myDeque);
+
+        myDeque.pollFirst();
+        print("퍼스트 출력" + myDeque);
+
+        myDeque.pollLast();
+        print("라스트 출력" + myDeque);
+
+        String answer1 = myDeque.stream()
+                .map(Object::toString)
+                .reduce((temp,str) -> temp + str)
+                .get();
+
+
+
+
+
         print(stAnswer3);
 
         Optional<String> stAnswer4 = Arrays.stream(stArr5)
@@ -226,7 +254,7 @@ public class C15_05_StreamAPI_01 {
 
         Stack<Integer> stack = new Stack<>();
 
-            stack.pop()
+            stack.pop();
 
 
 //        Integer List 를
@@ -245,9 +273,15 @@ public class C15_05_StreamAPI_01 {
                 .mapToInt(i -> i)
                 .toArray();
 
-        // 방법 3
-        int[] arr3 = list.stream()
+
+        // 방법 2
+        int[] arr22 = list.stream()
                 .mapToInt(Integer::intValue)
+                .toArray();
+
+        // 방법 3
+        long[] arr3 = list.stream()
+                .mapToLong(Long::valueOf)
                 .toArray();
 
         // 방법 4
@@ -258,7 +292,6 @@ public class C15_05_StreamAPI_01 {
 
 
         String a  = "";
-        a.charAt()
 
 
 
