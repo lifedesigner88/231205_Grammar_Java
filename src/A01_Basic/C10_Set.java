@@ -100,9 +100,9 @@ public class C10_Set {
 
 
 
-        Set<String> mySet4 = new TreeSet<>();
-        Set<String> mySet5 = new LinkedHashSet<>();
 
+        Set<String> mySet4 = new TreeSet<>();
+        LinkedHashSet<String> mySet5 = new LinkedHashSet<>();
 
 
 

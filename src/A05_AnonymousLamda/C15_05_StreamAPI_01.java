@@ -74,6 +74,18 @@ public class C15_05_StreamAPI_01 {
         print("숫자정렬 int[]로 하는방법" + Arrays.toString(intStream2));
 
 
+
+//        2차원 배열 인트값 추출.
+        int[][] arr8 = new int[2][3];
+        int colMax = Arrays.stream(arr8)
+                .mapToInt(a -> a.length)
+                .max()
+                .getAsInt();
+
+
+
+
+
 //        숫자 리스트 정렬하기
         List<Integer> myList = new LinkedList<>(Arrays.asList(6, 1, 2, 3, 4, 5, 6, 8));
 //        collect (구체적인 컬렉션 객체 명시)
