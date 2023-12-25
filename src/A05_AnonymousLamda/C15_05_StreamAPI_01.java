@@ -173,6 +173,9 @@ public class C15_05_StreamAPI_01 {
 
 
 
+
+
+
         print(stAnswer3);
 
         Optional<String> stAnswer4 = Arrays.stream(stArr5)

@@ -245,7 +245,6 @@ public class C08_List {
         print("Result : " + comBi);
 
 
-
         // 약수 구하기
         int n = 12;
         List<Integer> multi = new ArrayList<>();
