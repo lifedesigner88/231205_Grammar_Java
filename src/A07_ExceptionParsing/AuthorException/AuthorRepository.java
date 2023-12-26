@@ -5,14 +5,12 @@ import java.util.List;
 import java.util.Optional;
 
 class AuthorRepository {
-    List<Author> authors ;
+    List<Author> authors = new ArrayList<>() ;
 
-    AuthorRepository(){
-        authors = new ArrayList<>();
-    }
 
-    void register(Author author){
+    Author register(Author author){
         this.authors.add(author);
+        return this.authors.get(authors.size() - 1);
     }
 
     Optional<Author> getAuthorByEmail(String email) {

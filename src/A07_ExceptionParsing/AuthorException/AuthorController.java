@@ -1,8 +1,7 @@
 package A07_ExceptionParsing.AuthorException;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -13,7 +12,6 @@ class AuthorController {
 //        Controller (입력받고, 객체 생성, 예외처리)
 //        Service (비지니스로직 - resister,login throw new)
 //        Repository (
-
 
         AuthorService authorService = new AuthorService();
 
@@ -39,8 +37,11 @@ class AuthorController {
                     print("이메일:");  email = myScan.nextLine();
                     print("비밀번호:"); password = myScan.nextLine();
                     try {
-                        authorService.register(new Author(name, email, password));
-                    } catch ()
+                        Author author = new Author(name, email, password);
+                        print(authorService.register(author).toString() + "정보로 회원가입 되었습니다.");
+                    } catch (IllegalArgumentException e){
+                        print(e.getMessage() );
+                    }
                     break;
 
 
@@ -50,14 +51,11 @@ class AuthorController {
                     print("이메일:"); email = myScan.nextLine();
                     print("비밀번호:"); password = myScan.nextLine();
 
-                    try {}
-                    catch{}
+                    try {
+                        Author temp = authorService.login(email, password);
+                        print(temp.toString() + " 정보로 로그인 되었습니다.");     // 로그인 되었음.
+                    } catch (NoSuchElementException | IllegalArgumentException e) { print(e.getMessage());}
 
-                    Optional<Author> loginedAuthor = authorService.; (없으면 여기서
-                예외 발생)
-                    if(){
-                        loginedAuthor.get() " 환영합니다. "
-                    }
                     break;
             }
         }
