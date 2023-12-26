@@ -36,8 +36,7 @@ public class C09_Map {
 
         // Iterator 이용한 방법
         Iterator<String> myIter = myMap.keySet().iterator();
-        while(myIter.hasNext())
-            print("HasNext로 출력 : " + myIter.next());
+        while (myIter.hasNext()) print("HasNext로 출력 : " + myIter.next());
 
 
         List<String> myList = new ArrayList<>();

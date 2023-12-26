@@ -49,9 +49,6 @@ public class C16_03_GenericMain {
         print("");
 
 
-//        StringBuilder sb = new StringBuilder();
-//        sb.insert();
-
 
     } // main
 
