@@ -29,14 +29,18 @@ public class C15_05_StreamAPI_01 {
 //        String[] stArr2 = stStream.filter(a -> a.length() <= 4).toArray(a->new String[a]);
 
 //        메소드 참조 방식
-        String[] stArr2 = stStream.filter(a -> a.length() <= 4).toArray(String[]::new);
+        String[] stArr2 = stStream
+                .filter(a -> a.length() <= 4)
+                .toArray(String[]::new);
         print("메소드 참조 방식" + Arrays.toString(stArr2));
 
 
         int[] intArr = {10, 20, 30, 40, 50};
         IntStream intStream = stream(intArr);
 
-        int[] intArr2 = intStream.filter(a -> a>20).toArray();
+        int[] intArr2 = intStream
+                .filter(a -> a>20)
+                .toArray();
         print("20보다 큰 값 필터링" + Arrays.toString(intArr2));
 
 
@@ -60,10 +64,11 @@ public class C15_05_StreamAPI_01 {
 
 
 //        Int로 변환
-        int[] myStream = stream(stArr3)
+        int[] myStream = Arrays.stream(stArr3)
                 .distinct()
                 .filter(a -> a.length() <= 3)
-                .mapToInt(String::length).toArray();
+                .mapToInt(String::length)
+                .toArray();
 
         print("Int로 변환:" + Arrays.toString(myStream));
 
@@ -319,8 +324,10 @@ public class C15_05_StreamAPI_01 {
         Optional<String> opt1 = Optional.empty();
         opt1.ifPresent(s -> s.compareTo("abc"));
 
+
 //        Optional 객체 생성
         Optional<String> opt2 = Optional.ofNullable("hello"); //null 이 있을 수도 있음을 의미;
+        Optional<String> opt3 = Optional.of("12"); // 값을 넣어 주는 함수.
 
 
 
@@ -348,10 +355,16 @@ public class C15_05_StreamAPI_01 {
         System.out.println(oi.orElseThrow(() -> new NoSuchElementException("no Value")));
 
 //        stream API => 디버깅이 어렵다.
+
+
 //        OptionalInt o2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4)).stream()
 //                .peek() => 추가로 공부.
 //                .mapToInt(i -> i);
 //                .max();
+
+
+
+
 
 
     } // main

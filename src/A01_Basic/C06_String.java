@@ -1,27 +1,28 @@
 package A01_Basic;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class C06_String {
     public static void main(String[] args){
         print("");
 
-/*
-        Wrapper Class
-        원시(primitive) literal 값으로 세팅.
+//        Wrapper Class
+//        원시(primitive) literal 값으로 세팅.
 
-        String str = new String("세종")
+        String str = new String("세종");
 
-        int => Integer
-        char => Character
-        long => Char
-*/
+//        int => Integer
+//        char => Character
+//        long => Char
 
 
 
         // int 와 Interger 의 형변환
-/*
+
         int int_num = 10;
         Integer a = new Integer(20);
 
@@ -29,7 +30,7 @@ public class C06_String {
         int d = a.intValue() ;                      // 언박싱
 
         Integer b = int_num ;                       // auto 박싱
-        int e = Integer.valueOf(int_num) ;          // 박싱
+        Integer e = Integer.valueOf(int_num) ;          // 박싱
 
 
         // String 과 int 의 변형;
@@ -49,20 +50,16 @@ public class C06_String {
         list_a.add(20);
         list_a.add(30);
         print(list_a);
-*/
 
 
-/*
         String mySt1 = new String("hello");
         String mySt2 = new String("hello");
         String mySt3 = "hello";
         String mySt4 = "hello";
-*/
+        String mySt5 = "hello java java";
 
-        String mySt2 = "hello java java";
-//      String method 들 입니다.
 
-/*
+        //      String method 들 입니다.
 
 //        length()
         String mySt = " hello ";
@@ -70,13 +67,13 @@ public class C06_String {
 
 
 //        indexOf  - 특정 문자열의 시작 인댁스
-        String mySt2 = "hello java java";
+        String myStr2 = "hello java java";
         print("indexOf : " + mySt2.indexOf("java"));
 
 
 //        contains
-        String mySt3 = "hello java java";
-        print("contain : " + mySt3.contains("j"));
+        String myStr3 = "hello java java";
+        print("contain : " + myStr3.contains("j"));
         print("");
 
 
@@ -90,10 +87,8 @@ public class C06_String {
 
         print(st);
         print("위 문장에서 a는 " + counter + "개 존재합니다.");
-*/
 
 
-/*
 
 //        substring(a,b) a이상 b미만의 index를 자른다.
 
@@ -132,13 +127,11 @@ public class C06_String {
 
         char ch1 = 'a';
         String st1 = Character.toString(ch1);
-*/
 
 
 //      알파벳 뺴고 다시 집어넣기.
-/*
 
-        String str = "172a8한937ssjkasdk구jh";
+        String str3 = "172a8한937ssjkasdk구jh";
         String str2 = "";
 
         for (int i = 0 ; i < str.length() ; i++) {
@@ -149,7 +142,6 @@ public class C06_String {
         }
         print(str2);
 
-*/
 
 //        my_string.toCharArray(); => char 배열로 변경
 //        String[] arr = my_string.split("");
@@ -157,11 +149,11 @@ public class C06_String {
 //        StringBuilder .. sb.setCharAt(index, char)
 
 // 정규표현식
-/*
+
 
 //  replace(a,b) : a 문자를 b문자로 대체
 
-        String st1 = "hello world";
+        String str1 = "hello world";
         String st2 = st1.replace("world", "java");
         print(st2);
 
@@ -183,13 +175,11 @@ public class C06_String {
 
         String str8 = str4.replaceAll("[A-Za-z0-9]","");
         print("한글 제거 : " + str8);
-*/
 
 
 
 
 //        Pattern 클래스
-/*
 //        전화번호 검증
         boolean matcher = Pattern.matches("^\\d{3}-\\d{4}-\\d{4}$", "010-1223-1234");
         print(matcher);
@@ -198,18 +188,15 @@ public class C06_String {
         print(matcher2);
 
 
-        */
 
-
- /*
 //        split
 
-        String a = "a:b:c:d";
-        String[] stArr = a.split(":");
+        String a24 = "a:b:c:d";
+        String[] stArr = a24.split(":");
         print(Arrays.toString(stArr));
 
-        String a2 = "a b c  d";
-        String[] stArr2 = a2.split(" ");
+        String a23 = "a b c  d";
+        String[] stArr2 = a23.split(" ");
         print(Arrays.toString(stArr2));
 
         String a3 = " a b c  d";
@@ -217,14 +204,12 @@ public class C06_String {
         print(Arrays.toString(stArr3));
 
 //        isEmpty 와 Null 구분
- */
-
-/*
 
 
-        String st1 = null;
-        String str2 = "";
-        print( st1 == null );
+
+        String str11 = null;
+        String str21 = "";
+        print( str11 == null );
 
 
 //        NullPointerException
@@ -234,13 +219,9 @@ public class C06_String {
         arr[1] = "world";
         print(arr[3]);
 
-*/
 
 
-
-
-
-/*      프로그래머스 가운데 글자 가져오기 나만의 풀이.
+//      프로그래머스 가운데 글자 가져오기 나만의 풀이.
 
 class Solution {
     public String solution(String s) {
@@ -259,7 +240,6 @@ class Solution {
     }
 }
 
-*/
 
 
 //        String before = "asdf";
@@ -268,13 +248,14 @@ class Solution {
 
 // join : String[] -> String 합치기
 
-        String[] arr = {"html", "java", "java-script", "python"};
-        print(String.join(" ",arr));
-// String 과 int의 형변환
+        String[] arr44 = {"html", "java", "java-script", "python"};
+        print(String.join(" ",arr44));
 
-        int a = 10;
-        String st_a = Integer.toString(a);
-        String st_a1 = String.valueOf(a);
+        // String 과 int의 형변환
+
+        int a12 = 10;
+        String st_a2 = Integer.toString(a12);
+        String st_a1 = String.valueOf(a12);
 
 
 
@@ -297,7 +278,7 @@ class Solution {
         StringBuilder sb2 = new StringBuilder("hello");
         sb2.append(2);
 
-        String str = new String("dsf");
+        String strtt = new String("dsf");
 
         String[] arr2 = {} ;
         String.join ("", arr2);
@@ -311,57 +292,57 @@ class Solution {
                 int answer = 0;
 
                 for (int row = 0; row < board.length; row++)
-                    for (int col = 0; row + col <= k; col++)
+                    for (int col = 0; row + col < k; col++)
                         answer += board[row][col];
 
                 print("정답은" + answer);
 
 
-// 문자열 밀기 풀이.
-//
-//    class Solution {
-//        public int solution(String A, String B) {
-//            int answer = 0;
-//            int length = A.length();
-//            StringBuilder temp = new StringBuilder(A);
-//
-//
-//            for (int i = 0 ; i < length ; i++){
-//                if (B.equals(temp.toString()))
-//                    break;
-//                temp.insert(0,temp.charAt(length-1));
-//                temp.delete(length, length+1);
-//                answer++;
-//            }
-//
-//            if (!B.equals(temp.toString()))
-//                answer = -1;
-//
-//            return answer;
-//
-//        }
-//    }
-//
-//
-//        class Solution {
-//            public int solution(String A, String B) {
-//                int answer = -1;
-//                int length = A.length();
-//                StringBuilder temp = new StringBuilder(A);
-//
-//
-//                for (int i = 0 ; i < length ; i++){
-//                    if (B.equals(temp.toString())){
-//                        answer = i;
-//                        break;
-//                    }
-//                    temp.insert(0,temp.charAt(length-1));
-//                    temp.delete(length, length+1);
-//                }
-//
-//                return answer;
-//            }
-//        }
+    // 문자열 밀기 풀이.
+
+        class Solution2 {
+            public int solution(String A, String B) {
+                int answer = 0;
+                int length = A.length();
+                StringBuilder temp = new StringBuilder(A);
+
+
+                for (int i = 0 ; i < length ; i++){
+                    if (B.equals(temp.toString()))
+                        break;
+                    temp.insert(0,temp.charAt(length-1));
+                    temp.delete(length, length+1);
+                    answer++;
+                }
+
+                if (!B.equals(temp.toString()))
+                    answer = -1;
+
+                return answer;
+
+            }
+        }
+
+
+        class Solution3 {
+            public int solution(String A, String B) {
+                int answer = -1;
+                int length = A.length();
+                StringBuilder temp = new StringBuilder(A);
+
+
+                for (int i = 0 ; i < length ; i++){
+                    if (B.equals(temp.toString())){
+                        answer = i;
+                        break;
+                    }
+                    temp.insert(0,temp.charAt(length-1));
+                    temp.delete(length, length+1);
+                }
+
+                return answer;
+            }
+        }
 
 
     } // main
