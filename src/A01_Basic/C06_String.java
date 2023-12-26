@@ -277,7 +277,6 @@ class Solution {
 
         StringBuilder sb2 = new StringBuilder("hello");
         sb2.append(2);
-
         String strtt = new String("dsf");
 
         String[] arr2 = {} ;
