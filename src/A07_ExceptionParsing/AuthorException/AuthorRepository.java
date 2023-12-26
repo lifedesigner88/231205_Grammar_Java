@@ -2,6 +2,7 @@ package A07_ExceptionParsing.AuthorException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class AuthorRepository {
     List<Author> authors ;
@@ -14,10 +15,10 @@ class AuthorRepository {
         this.authors.add(author);
     }
 
-    Author getAuthorByEmail(String email) {
+    Optional<Author> getAuthorByEmail(String email) {
         for (Author a : this.authors)
             if(a.getEmail().equals(email))
-                return a;
-        return null;
+                return Optional.of(a);
+        return Optional.empty();
     }
 }
