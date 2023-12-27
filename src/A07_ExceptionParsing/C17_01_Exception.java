@@ -3,7 +3,7 @@ package A07_ExceptionParsing;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class C17_06_ExceptionParsing {
+public class C17_01_Exception {
     public static void main(String[] args) {
 //        find .err grep 고객 id
 //        datadog, elk (각종 로그 툴 -JSP, 타임리프)

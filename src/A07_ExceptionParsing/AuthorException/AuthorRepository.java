@@ -7,7 +7,6 @@ import java.util.Optional;
 class AuthorRepository {
     List<Author> authors = new ArrayList<>() ;
 
-
     Author register(Author author){
         this.authors.add(author);
         return this.authors.get(authors.size() - 1);

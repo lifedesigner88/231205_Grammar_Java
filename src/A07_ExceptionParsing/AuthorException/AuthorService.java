@@ -8,13 +8,10 @@ class AuthorService {
 
     AuthorRepository authorRepository = new AuthorRepository();
 
-
-
 //
 //    AuthorService(){
 //        authorRepository = new AuthorRepository();
 //    }
-
 
 
     Author register(Author author) throws IllegalArgumentException{

@@ -38,7 +38,7 @@ class AuthorController {
                     print("비밀번호:"); password = myScan.nextLine();
                     try {
                         Author author = new Author(name, email, password);
-                        print(authorService.register(author).toString() + "정보로 회원가입 되었습니다.");
+                        print(authorService.register(author) + "정보로 회원가입 되었습니다.");
                     } catch (IllegalArgumentException e){
                         print(e.getMessage() );
                     }
