@@ -25,12 +25,14 @@ public class C17_04_JsonWithJackSonClass {
             JsonNode data = mapper.readTree(myPath);
             univMap.put("students", data.get("students"));
 
-            print("테스트" + univMap);
-
-            for(String j : univMap.keySet())
-
-                univMap.get(j).toString();
-
+            print("테스트: " + univMap.get("students").toString());
+//
+//            for(String j : univMap.keySet()) {
+//                Student temp = mapper.readValue(univMap.get(j).toString(), Student.class);
+//                stuList.add(temp);
+//            }
+//
+//            print("리스트 테스트: " + stuList);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
