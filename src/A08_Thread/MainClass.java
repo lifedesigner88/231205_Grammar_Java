@@ -30,14 +30,25 @@ public class MainClass {
         new Thread(() -> System.out.println("익명객체 스래드"));       //4
 
 
-
 //        thread의 동시성 이슈 테스트
-//        단일 스레드 이랍ㄴ 호출
-        for (int i = 0; i < 1000; i++)
-            Library.borrowBook();
+        Library testLibrary = new Library();
+        for (int i = 0; i < 1000; i++)        // 싱글 스레드
+            testLibrary.borrowBook();
+        System.out.println("최종 남은 수량 " + testLibrary.bookcount);
 
 
-        System.out.println("최종 남은 수량 " + Library.bookcount);
+        Library library = new Library();
+        for (int i = 0; i < 1000; i++) {     // 멀티 스레드
+
+            Thread th = new Thread(library::borrowBook);
+
+            try {
+                th.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("최종 남은 수량 " + library.bookcount);
 
 
 
