@@ -1,9 +1,6 @@
 package A09_Spring;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DatabaseConnect extends Print{
     public static void main(String[] args) {
@@ -13,11 +10,16 @@ public class DatabaseConnect extends Print{
         try {
             Connection connection = DriverManager.getConnection(url, userName, pw);
             print("😁✔🐱‍🚀🐱‍🏍😍 DB 커넥션 성공 😁✔🐱‍🚀🐱‍🏍😍");
+
 //            statement : 쿼리를 담아 DB 로 보낼 수 있는 객체
             Statement st = connection.createStatement();
             String myQuery = "SELECT * FROM author";
-            st.executeQuery(myQuery);
-
+            ResultSet rs = st.executeQuery(myQuery);
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                print("ID: " + id + ", Name: " + name);
+            }
         } catch (SQLException e) {
             print(e.getMessage());
         }
