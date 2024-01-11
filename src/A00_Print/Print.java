@@ -1,4 +1,4 @@
-package A09_Spring;
+package A00_Print;
 
 public class Print {
     static void P(Object x) {
@@ -9,7 +9,7 @@ public class Print {
         System.out.println(new String(x));
     }
 
-    static void print(Object x) {
+    protected static void print(Object x) {
         System.out.println(x);
     }
 
